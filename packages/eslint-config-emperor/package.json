@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-emperor",
-  "version": "0.0.0-semantically-released",
+  "version": "0.0.0-development",
   "description": "Curated ESLint config for React and TypeScript",
   "bugs": {
     "url": "https://github.com/kubajastrz/eslint-config-emperor/issues"
