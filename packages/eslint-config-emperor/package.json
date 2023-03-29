@@ -1,0 +1,55 @@
+{
+  "name": "eslint-config-emperor",
+  "version": "0.0.0-semantically-released",
+  "description": "Curated ESLint config for React and TypeScript",
+  "bugs": {
+    "url": "https://github.com/kubajastrz/eslint-config-emperor/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kubajastrz/eslint-config-emperor.git",
+    "directory": "packages/eslint-config-emperor"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "base",
+    "react",
+    "index.js",
+    "prettier.js",
+    "style.js"
+  ],
+  "dependencies": {
+    "eslint-config-prettier": "^8.8.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.57.0",
+    "@typescript-eslint/parser": "5.57.0",
+    "eslint": "8.37.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-unicorn": "46.0.0",
+    "prettier": "2.8.7",
+    "typescript": "5.0.2"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">=5",
+    "@typescript-eslint/parser": ">=5",
+    "eslint": "*",
+    "eslint-plugin-import": ">=2",
+    "eslint-plugin-jsx-a11y": ">=6",
+    "eslint-plugin-prettier": ">=4",
+    "eslint-plugin-react": ">=7",
+    "eslint-plugin-react-hooks": ">=4",
+    "eslint-plugin-unicorn": ">=46",
+    "typescript": ">=4.5"
+  },
+  "peerDependenciesMeta": {
+    "eslint-plugin-prettier": {
+      "optional": true
+    }
+  }
+}

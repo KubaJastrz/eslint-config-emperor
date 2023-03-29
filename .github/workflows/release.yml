@@ -1,0 +1,50 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+      - alpha
+      - beta
+      - next
+
+jobs:
+  validate:
+    name: validate
+    strategy:
+      matrix:
+        node: [16, 18]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: bahmutov/npm-install@v1
+
+      - name: Test
+        run: pnpm test
+
+  release:
+    name: release
+    needs: [validate]
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'push' && github.event.repository.full_name == github.repository &&
+      contains('refs/heads/main,refs/heads/alpha,refs/heads/beta,refs/heads/next', github.ref)
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+      - uses: bahmutov/npm-install@v1
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          cd packages/eslint-config-emperor
+          npx semantic-release
