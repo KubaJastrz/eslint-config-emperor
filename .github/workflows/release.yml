@@ -21,6 +21,8 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - uses: pnpm/action-setup@v2
+        with:
+          run_install: true
 
       - name: Test
         run: pnpm test
@@ -40,6 +42,8 @@ jobs:
         with:
           node-version: 'lts/*'
       - uses: pnpm/action-setup@v2
+        with:
+          run_install: true
 
       - name: Release
         env:
