@@ -19,20 +19,6 @@
     "prettier.js",
     "style.js"
   ],
-  "release": {
-    "branches": [
-      "master",
-      "next",
-      {
-        "name": "beta",
-        "prerelease": true
-      },
-      {
-        "name": "alpha",
-        "prerelease": true
-      }
-    ]
-  },
   "dependencies": {
     "eslint-config-prettier": "^8.8.0"
   },
