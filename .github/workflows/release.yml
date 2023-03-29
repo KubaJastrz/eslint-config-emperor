@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-      - uses: bahmutov/npm-install@v1
+      - run: pnpm install
 
       - name: Test
         run: pnpm test
@@ -39,7 +39,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
-      - uses: bahmutov/npm-install@v1
+      - run: pnpm install
 
       - name: Release
         env:
