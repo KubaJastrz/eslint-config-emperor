@@ -10,6 +10,20 @@
     "singleQuote": true,
     "trailingComma": "all"
   },
+  "release": {
+    "branches": [
+      "master",
+      "next",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ]
+  },
   "devDependencies": {
     "prettier": "2.8.7",
     "table": "^6.8.1",
