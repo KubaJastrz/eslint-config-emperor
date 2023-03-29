@@ -1,4 +1,5 @@
 {
+  "name": "eslint-config-emperor",
   "private": true,
   "scripts": {
     "format": "prettier --write .",

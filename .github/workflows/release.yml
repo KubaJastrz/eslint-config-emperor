@@ -51,4 +51,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           cd packages/eslint-config-emperor
-          npx semantic-release
+          npx semantic-release --branches main,alpha,beta,next
