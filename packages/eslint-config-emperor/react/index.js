@@ -4,4 +4,10 @@ module.exports = {
     require.resolve('./accessibility.js'),
     require.resolve('./errors.js'),
   ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
 };

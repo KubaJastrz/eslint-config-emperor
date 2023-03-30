@@ -1,9 +1,9 @@
 import url from 'node:url';
 import { ESLint } from 'eslint';
 
-const rootDir = url.fileURLToPath(new URL('..', import.meta.url));
+const rootDir = url.fileURLToPath(new URL('../../..', import.meta.url));
 
-export function getConfigForFile({
+export async function getConfigForFile({
   baseConfig,
   targetFile,
 }: {
@@ -15,9 +15,11 @@ export function getConfigForFile({
     useEslintrc: false,
     cwd: rootDir,
   });
-  return eslint.calculateConfigForFile(targetFile);
+  const config = await eslint.calculateConfigForFile(targetFile);
+  config.parser = removeAbsolutePath(config.parser);
+  return config;
 }
 
-export function removeAbsolutePath(pathToFile: string, replacement = '') {
-  return pathToFile.replace(rootDir, replacement);
+export function removeAbsolutePath(pathToFile: string, replacement = '<root>/') {
+  return pathToFile?.replace(rootDir, replacement) ?? pathToFile;
 }

@@ -1,9 +1,17 @@
+/**
+ * Native ESLint rules
+ * @see https://eslint.org/docs/rules/
+ */
+const eslint = {
+  // Disallow duplicate module imports
+  'no-duplicate-imports': ['error', { includeExports: true }],
+};
+
 module.exports = {
   extends: [],
   plugins: ['import', 'unicorn', '@typescript-eslint'],
   rules: {
-    // ESLint
-    'no-duplicate-imports': 'error',
+    ...eslint,
 
     // Import
     'import/export': 'error',

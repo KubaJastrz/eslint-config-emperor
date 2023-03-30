@@ -16,6 +16,7 @@
 ```sh
 npm install --save-dev eslint-config-emperor \
   @typescript-eslint/eslint-plugin \
+  @typescript-eslint/parser \
   eslint \
   eslint-config-prettier \
   eslint-plugin-import \
@@ -39,6 +40,10 @@ module.exports = {
     // Optional code style rules, aiming for best practices.
     'emperor/style',
   ],
+  parserOptions: {
+    // Required for TypeScript.
+    project: './tsconfig.json',
+  },
 };
 ```
 
@@ -52,6 +57,10 @@ module.exports = {
     // Optional code style rules, aiming for best practices.
     'emperor/react/style',
   ],
+  parserOptions: {
+    // Required for TypeScript.
+    project: './tsconfig.json',
+  },
 };
 ```
 

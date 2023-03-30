@@ -1,5 +1,5 @@
 module.exports = {
-  extends: [],
+  extends: [require.resolve('../base/style.js')],
   plugins: ['react'],
   rules: {
     'react/jsx-curly-brace-presence': [
