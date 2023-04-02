@@ -14,8 +14,28 @@
 ## Installation
 
 ```sh
-npm install --save-dev eslint-config-emperor @typescript-eslint/eslint-plugin eslint
+npm install --save-dev eslint-config-emperor
 ```
+
+```sh
+yarn add --save-dev eslint-config-emperor
+```
+
+```sh
+pnpm add --save-dev eslint-config-emperor
+```
+
+Dependant plugins will be installed automatically. The list includes:
+
+- @typescript-eslint/eslint-plugin
+- @typescript-eslint/parser
+- eslint-config-prettier
+- eslint-plugin-import
+- eslint-plugin-jsx-a11y
+- eslint-plugin-prettier
+- eslint-plugin-react
+- eslint-plugin-react-hooks
+- eslint-plugin-unicorn
 
 ## Usage
 
@@ -25,18 +45,14 @@ npm install --save-dev eslint-config-emperor @typescript-eslint/eslint-plugin es
 
 ```js
 module.exports = {
-  extends: [
-    // Base rules for regular JS/TS, only catching potential errors and code smells.
-    'emperor',
-    // Optional code style rules, aiming for best practices.
-    'emperor/style',
-  ],
+  // General error-catching rules. Lightweight code style rules are included as optional.
+  extends: ['emperor', 'emperor/style', 'emperor/prettier'],
+  // Add, if you are using TypeScript:
   parserOptions: {
-    // Required for TypeScript.
     project: './tsconfig.json',
   },
+  // Add, if you are using Node.js:
   env: {
-    // Required for Node.js or configuration files.
     node: true,
   },
 };
@@ -46,18 +62,15 @@ module.exports = {
 
 ```js
 module.exports = {
-  extends: [
-    // Base error-catching and a11y rules for React. Already includes Base rules.
-    'emperor/react',
-    // Optional code style rules, aiming for best practices.
-    'emperor/react/style',
-  ],
+  // General error-catching rules. Already includes regular JS/TS rules.
+  // Lightweight code style rules are included as optional.
+  extends: ['emperor/react', 'emperor/react/style', 'emperor/prettier'],
+  // Add, if you are using TypeScript:
   parserOptions: {
-    // Required for TypeScript.
     project: './tsconfig.json',
   },
+  // Add, if you are using Node.js:
   env: {
-    // Required for Node.js or configuration files.
     node: true,
   },
 };
@@ -70,14 +83,3 @@ _TODO_
 Integrating with Remix:
 
 _TODO_
-
-#### Prettier
-
-```js
-module.exports = {
-  extends: [
-    // Optional, included for convenience if you want autoformatting.
-    'emperor/prettier',
-  ],
-};
-```
