@@ -210,8 +210,6 @@ const typescriptEslint = {
   // Disallow returning a value with type `any` from a function
   '@typescript-eslint/no-unsafe-return': 'error',
 
-
-
   'no-dupe-class-members': 'off',
   '@typescript-eslint/no-dupe-class-members': 'error',
   'no-loss-of-precision': 'off',
@@ -231,6 +229,7 @@ module.exports = {
     {
       files: ['*.ts', '*.tsx'],
       rules: {
+        'no-undef': 'off',
         ...typescriptEslint,
       },
     },

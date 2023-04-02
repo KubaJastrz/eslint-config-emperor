@@ -14,7 +14,7 @@
 ## Installation
 
 ```sh
-npm install --save-dev eslint-config-emperor eslint
+npm install --save-dev eslint-config-emperor @typescript-eslint/eslint-plugin eslint
 ```
 
 ## Usage
@@ -35,6 +35,10 @@ module.exports = {
     // Required for TypeScript.
     project: './tsconfig.json',
   },
+  env: {
+    // Required for Node.js or configuration files.
+    node: true,
+  },
 };
 ```
 
@@ -51,6 +55,10 @@ module.exports = {
   parserOptions: {
     // Required for TypeScript.
     project: './tsconfig.json',
+  },
+  env: {
+    // Required for Node.js or configuration files.
+    node: true,
   },
 };
 ```
