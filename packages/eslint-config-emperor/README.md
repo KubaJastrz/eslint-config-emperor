@@ -63,6 +63,14 @@ module.exports = {
 };
 ```
 
+Integrating with Next.js:
+
+_TODO_
+
+Integrating with Remix:
+
+_TODO_
+
 #### Prettier
 
 ```js
