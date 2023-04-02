@@ -4,7 +4,9 @@ import { getConfigForFile } from './_utils';
 
 it('[JS] prettier', async () => {
   const computedConfig = await getConfigForFile({
-    baseConfig: require('../prettier'),
+    baseConfig: {
+      extends: [require.resolve('../prettier')],
+    },
     targetFile: path.resolve(__dirname, 'sample/base.js'),
   });
   expect(computedConfig).toMatchSnapshot();
@@ -12,7 +14,9 @@ it('[JS] prettier', async () => {
 
 it('[TS] prettier', async () => {
   const computedConfig = await getConfigForFile({
-    baseConfig: require('../prettier'),
+    baseConfig: {
+      extends: [require.resolve('../prettier')],
+    },
     targetFile: path.resolve(__dirname, 'sample/base.ts'),
   });
   expect(computedConfig).toMatchSnapshot();

@@ -4,7 +4,9 @@ import { getConfigForFile } from './_utils';
 
 it('[JS] react', async () => {
   const computedConfig = await getConfigForFile({
-    baseConfig: require('../react'),
+    baseConfig: {
+      extends: [require.resolve('../react')],
+    },
     targetFile: path.resolve(__dirname, 'sample/react.js'),
   });
   expect(computedConfig).toMatchSnapshot();
@@ -12,7 +14,9 @@ it('[JS] react', async () => {
 
 it('[TS] react', async () => {
   const computedConfig = await getConfigForFile({
-    baseConfig: require('../react'),
+    baseConfig: {
+      extends: [require.resolve('../react')],
+    },
     targetFile: path.resolve(__dirname, 'sample/react.tsx'),
   });
   expect(computedConfig).toMatchSnapshot();
@@ -20,7 +24,9 @@ it('[TS] react', async () => {
 
 it('[JS] react/style', async () => {
   const computedConfig = await getConfigForFile({
-    baseConfig: require('../react/style'),
+    baseConfig: {
+      extends: [require.resolve('../react/style')],
+    },
     targetFile: path.resolve(__dirname, 'sample/react.js'),
   });
   expect(computedConfig).toMatchSnapshot();
@@ -28,7 +34,9 @@ it('[JS] react/style', async () => {
 
 it('[TS] react/style', async () => {
   const computedConfig = await getConfigForFile({
-    baseConfig: require('../react/style'),
+    baseConfig: {
+      extends: [require.resolve('../react/style')],
+    },
     targetFile: path.resolve(__dirname, 'sample/react.tsx'),
   });
   expect(computedConfig).toMatchSnapshot();

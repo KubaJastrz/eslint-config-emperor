@@ -4,7 +4,9 @@ import { getConfigForFile } from './_utils';
 
 it('[JS] base', async () => {
   const computedConfig = await getConfigForFile({
-    baseConfig: require('../base'),
+    baseConfig: {
+      extends: [require.resolve('../base')],
+    },
     targetFile: path.resolve(__dirname, 'sample/base.js'),
   });
   expect(computedConfig).toMatchSnapshot();
@@ -12,7 +14,9 @@ it('[JS] base', async () => {
 
 it('[TS] base', async () => {
   const computedConfig = await getConfigForFile({
-    baseConfig: require('../base'),
+    baseConfig: {
+      extends: [require.resolve('../base')],
+    },
     targetFile: path.resolve(__dirname, 'sample/base.ts'),
   });
   expect(computedConfig).toMatchSnapshot();
@@ -20,7 +24,9 @@ it('[TS] base', async () => {
 
 it('[JS] base/style', async () => {
   const computedConfig = await getConfigForFile({
-    baseConfig: require('../base/style'),
+    baseConfig: {
+      extends: [require.resolve('../base/style')],
+    },
     targetFile: path.resolve(__dirname, 'sample/base.js'),
   });
   expect(computedConfig).toMatchSnapshot();
@@ -28,7 +34,9 @@ it('[JS] base/style', async () => {
 
 it('[TS] base/style', async () => {
   const computedConfig = await getConfigForFile({
-    baseConfig: require('../base/style'),
+    baseConfig: {
+      extends: [require.resolve('../base/style')],
+    },
     targetFile: path.resolve(__dirname, 'sample/base.ts'),
   });
   expect(computedConfig).toMatchSnapshot();
