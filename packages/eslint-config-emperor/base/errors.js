@@ -105,9 +105,6 @@ const eslint = {
   // Disallow calling some `Object.prototype` methods directly on objects
   'no-prototype-builtins': 'error',
 
-  // Disallow variable redeclaration
-  'no-redeclare': 'error',
-
   // Disallow assignments where both sides are exactly the same
   'no-self-assign': 'error',
 
@@ -140,9 +137,6 @@ const eslint = {
 
   // Disallow use of optional chaining in contexts where the `undefined` value is not allowed
   'no-unsafe-optional-chaining': 'error',
-
-  // Disallow the use of variables before they are defined
-  'no-use-before-define': 'error',
 
   // Disallow the use of `with` statements
   'no-with': 'error',
@@ -222,12 +216,8 @@ const typescriptEslint = {
   '@typescript-eslint/no-dupe-class-members': 'error',
   'no-loss-of-precision': 'off',
   '@typescript-eslint/no-loss-of-precision': 'error',
-  'no-redeclare': 'off',
-  '@typescript-eslint/no-redeclare': 'error',
   'no-invalid-this': 'off',
   '@typescript-eslint/no-invalid-this': 'error',
-  'no-use-before-define': 'off',
-  '@typescript-eslint/no-use-before-define': 'error',
 };
 
 module.exports = {

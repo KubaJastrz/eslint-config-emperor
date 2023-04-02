@@ -13,7 +13,12 @@ const eslint = {
   'no-empty-character-class': 'error',
 
   // Disallow empty functions
-  'no-empty-function': 'error',
+  'no-empty-function': [
+    'error',
+    {
+      allow: ['constructors', 'methods', 'asyncMethods'],
+    },
+  ],
 
   // Disallow empty destructuring patterns
   'no-empty-pattern': 'error',
@@ -102,9 +107,6 @@ const eslint = {
  * @see https://github.com/sindresorhus/eslint-plugin-unicorn/tree/main/docs/rules
  */
 const unicorn = {
-  // Move function definitions to the highest possible scope
-  'unicorn/consistent-function-scoping': 'error',
-
   // Enforce passing a `message` value when creating a built-in error
   'unicorn/error-message': 'error',
 

@@ -2,10 +2,7 @@
  * Native ESLint rules
  * @see https://eslint.org/docs/rules/
  */
-const eslint = {
-  // Disallow duplicate module imports
-  'no-duplicate-imports': ['error', { includeExports: true }],
-};
+const eslint = {};
 
 module.exports = {
   extends: [],
@@ -53,7 +50,6 @@ module.exports = {
     {
       files: ['*.ts', '*.tsx'],
       rules: {
-        '@typescript-eslint/no-duplicate-imports': 'error',
         '@typescript-eslint/consistent-type-imports': [
           'error',
           {
