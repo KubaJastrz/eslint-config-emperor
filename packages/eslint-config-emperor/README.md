@@ -46,7 +46,7 @@ Dependant plugins will be installed automatically. The list includes:
 ```js
 module.exports = {
   // General error-catching rules. Lightweight code style rules are included as optional.
-  extends: ['emperor', 'emperor/style', 'emperor/prettier'],
+  extends: ['emperor', 'emperor/style'],
   // Add, if you are using TypeScript:
   parserOptions: {
     project: './tsconfig.json',
@@ -64,7 +64,7 @@ module.exports = {
 module.exports = {
   // General error-catching rules. Already includes regular JS/TS rules.
   // Lightweight code style rules are included as optional.
-  extends: ['emperor/react', 'emperor/react/style', 'emperor/prettier'],
+  extends: ['emperor/react', 'emperor/react/style'],
   // Add, if you are using TypeScript:
   parserOptions: {
     project: './tsconfig.json',
@@ -83,3 +83,15 @@ _TODO_
 Integrating with Remix:
 
 _TODO_
+
+#### Prettier
+
+Optional Prettier integration.
+
+```js
+module.exports = {
+  extends: ['emperor/prettier'],
+};
+```
+
+If you are not using Prettier, take a look at [all available stylistic rules](https://github.com/prettier/eslint-config-prettier/blob/main/index.js) to customize on your own.

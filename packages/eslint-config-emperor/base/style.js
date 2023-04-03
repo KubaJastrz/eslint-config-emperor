@@ -3,6 +3,9 @@
  * @see https://eslint.org/docs/rules/
  */
 const eslint = {
+  // Require constructor names to begin with a capital letter
+  'new-cap': 'error',
+
   // Disallow the use of `debugger`
   'no-debugger': 'error',
 
@@ -88,6 +91,9 @@ const eslint = {
 
   // Disallow `void` operators
   'no-void': 'error',
+
+  // Require method and property shorthand syntax for object literals
+  'object-shorthand': ['error', 'always'],
 
   // Disallow variables to be declared separately in functions
   'one-var': ['error', 'never'],

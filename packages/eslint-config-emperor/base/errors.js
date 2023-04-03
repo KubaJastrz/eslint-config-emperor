@@ -96,6 +96,9 @@ const eslint = {
   // Disallow calling global object properties as functions
   'no-obj-calls': 'error',
 
+  // Disallow reassigning `function` parameters
+  'no-param-reassign': 'error',
+
   // Disallow returning values from Promise executor functions
   'no-promise-executor-return': 'error',
 
