@@ -3,9 +3,6 @@
  * @see https://eslint.org/docs/rules/
  */
 const eslint = {
-  // Require constructor names to begin with a capital letter
-  'new-cap': 'error',
-
   // Disallow the use of `debugger`
   'no-debugger': 'error',
 
