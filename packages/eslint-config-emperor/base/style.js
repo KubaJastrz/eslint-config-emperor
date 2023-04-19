@@ -122,9 +122,6 @@ const unicorn = {
   // Disallow using the `this` argument in array methods
   'unicorn/no-array-method-this-argument': 'error',
 
-  // Disallow comparing `undefined` using `typeof`
-  'unicorn/no-typeof-undefined': 'error',
-
   // Disallow useless fallback when spreading in object literals
   'unicorn/no-useless-fallback-in-spread': 'error',
 
