@@ -43,6 +43,11 @@ Dependant plugins will be installed automatically. The list includes:
 
 #### Vanilla JS/TS
 
+Rules reference:
+
+- `emperor` - [JavaScript](docs/base_js.md), [TypeScript](docs/base_ts.md)
+- `emperor/style` - [JavaScript](docs/base-style_js.md), [TypeScript](docs/base-style_ts.md)
+
 ```js
 module.exports = {
   // General error-catching rules. Lightweight code style rules are included as optional.
@@ -59,6 +64,11 @@ module.exports = {
 ```
 
 #### React
+
+Rules reference:
+
+- `emperor/react` - [JavaScript](docs/react_js.md), [TypeScript](docs/react_ts.md)
+- `emperor/react/style` - [JavaScript](docs/react-style_js.md), [TypeScript](docs/react-style_ts.md)
 
 ```js
 module.exports = {
@@ -86,12 +96,12 @@ _TODO_
 
 #### Prettier
 
-Optional Prettier integration.
+Rules reference:
+
+- `emperor/prettier` - [Prettier](docs/prettier.md)
 
 ```js
 module.exports = {
   extends: ['emperor/prettier'],
 };
 ```
-
-If you are not using Prettier, take a look at [all available stylistic rules](https://github.com/prettier/eslint-config-prettier/blob/main/index.js) to customize on your own.
