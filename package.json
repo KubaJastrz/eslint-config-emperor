@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "format": "prettier --write .",
+    "generate-docs": "node scripts/generate-docs.js",
     "test": "vitest"
   },
   "prettier": {
@@ -12,6 +13,7 @@
   },
   "devDependencies": {
     "@types/eslint": "^8.37.0",
+    "husky": "^8.0.3",
     "prettier": "2.8.7",
     "table": "^6.8.1",
     "typescript": "5.0.4",
