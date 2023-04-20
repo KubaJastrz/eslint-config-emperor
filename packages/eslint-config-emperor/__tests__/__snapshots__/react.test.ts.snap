@@ -10,7 +10,7 @@ exports[`[JS] react 1`] = `
   "globals": {},
   "ignorePatterns": [],
   "noInlineConfig": undefined,
-  "parser": "<root>/node_modules/.pnpm/@typescript-eslint+parser@5.57.0_eslint@8.37.0_typescript@5.0.3/node_modules/@typescript-eslint/parser/dist/index.js",
+  "parser": "<root>/node_modules/.pnpm/@typescript-eslint+parser@5.59.0_eslint@8.38.0_typescript@5.0.4/node_modules/@typescript-eslint/parser/dist/index.js",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true,
@@ -307,7 +307,7 @@ exports[`[JS] react/style 1`] = `
   "globals": {},
   "ignorePatterns": [],
   "noInlineConfig": undefined,
-  "parser": "<root>/node_modules/.pnpm/@typescript-eslint+parser@5.57.0_eslint@8.37.0_typescript@5.0.3/node_modules/@typescript-eslint/parser/dist/index.js",
+  "parser": "<root>/node_modules/.pnpm/@typescript-eslint+parser@5.59.0_eslint@8.38.0_typescript@5.0.4/node_modules/@typescript-eslint/parser/dist/index.js",
   "parserOptions": {},
   "plugins": [
     "@typescript-eslint",
@@ -426,7 +426,7 @@ exports[`[TS] react 1`] = `
   "globals": {},
   "ignorePatterns": [],
   "noInlineConfig": undefined,
-  "parser": "<root>/node_modules/.pnpm/@typescript-eslint+parser@5.57.0_eslint@8.37.0_typescript@5.0.3/node_modules/@typescript-eslint/parser/dist/index.js",
+  "parser": "<root>/node_modules/.pnpm/@typescript-eslint+parser@5.59.0_eslint@8.38.0_typescript@5.0.4/node_modules/@typescript-eslint/parser/dist/index.js",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true,
@@ -751,7 +751,7 @@ exports[`[TS] react/style 1`] = `
   "globals": {},
   "ignorePatterns": [],
   "noInlineConfig": undefined,
-  "parser": "<root>/node_modules/.pnpm/@typescript-eslint+parser@5.57.0_eslint@8.37.0_typescript@5.0.3/node_modules/@typescript-eslint/parser/dist/index.js",
+  "parser": "<root>/node_modules/.pnpm/@typescript-eslint+parser@5.59.0_eslint@8.38.0_typescript@5.0.4/node_modules/@typescript-eslint/parser/dist/index.js",
   "parserOptions": {},
   "plugins": [
     "@typescript-eslint",
