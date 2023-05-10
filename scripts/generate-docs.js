@@ -57,7 +57,7 @@ function renderRules(rules) {
       }
       return [ruleName, description, value, ''];
     })
-    .map(([key, enabled, options]) => `| ${key} | ${enabled} | ${options} |`);
+    .map((entry) => `| ${entry.join(' | ')} |`);
   return [header, spacer, ...rows].join('\n');
 }
 
