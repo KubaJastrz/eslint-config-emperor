@@ -48,8 +48,8 @@
 | [no-useless-return](https://eslint.org/docs/rules/no-useless-return) | Disallow redundant return statements | error |  |
 | [no-var](https://eslint.org/docs/rules/no-var) | Require `let` or `const` instead of `var` | error |  |
 | [no-void](https://eslint.org/docs/rules/no-void) | Disallow `void` operators | error |  |
-| [object-shorthand](https://eslint.org/docs/rules/object-shorthand) | Require or disallow method and property shorthand syntax for object literals | error | <details><summary>Show</summary><code>"always"</code></details> |
-| [one-var](https://eslint.org/docs/rules/one-var) | Enforce variables to be declared either together or separately in functions | error | <details><summary>Show</summary><code>"never"</code></details> |
+| [object-shorthand](https://eslint.org/docs/rules/object-shorthand) | Require or disallow method and property shorthand syntax for object literals | error | <code>always</code> |
+| [one-var](https://eslint.org/docs/rules/one-var) | Enforce variables to be declared either together or separately in functions | error | <code>never</code> |
 | [prefer-const](https://eslint.org/docs/rules/prefer-const) | Require `const` declarations for variables that are never reassigned after declared | error |  |
 | [prefer-promise-reject-errors](https://eslint.org/docs/rules/prefer-promise-reject-errors) | Require using Error objects as Promise rejection reasons | error |  |
 | [yoda](https://eslint.org/docs/rules/yoda) | Require or disallow "Yoda" conditions | error |  |
