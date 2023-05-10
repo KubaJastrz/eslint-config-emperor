@@ -18,182 +18,182 @@
 
 ## Rules
 
-| Rule                                           | Enabled | Options |
-| ---------------------------------------------- | ------- | ------- |
-| array-bracket-newline                          | off     |         |
-| array-bracket-spacing                          | off     |         |
-| array-element-newline                          | off     |         |
-| arrow-parens                                   | off     |         |
-| arrow-spacing                                  | off     |         |
-| block-spacing                                  | off     |         |
-| brace-style                                    | off     |         |
-| comma-dangle                                   | off     |         |
-| comma-spacing                                  | off     |         |
-| comma-style                                    | off     |         |
-| computed-property-spacing                      | off     |         |
-| curly                                          | 0       |         |
-| dot-location                                   | off     |         |
-| eol-last                                       | off     |         |
-| func-call-spacing                              | off     |         |
-| function-call-argument-newline                 | off     |         |
-| function-paren-newline                         | off     |         |
-| generator-star                                 | off     |         |
-| generator-star-spacing                         | off     |         |
-| implicit-arrow-linebreak                       | off     |         |
-| indent                                         | off     |         |
-| indent-legacy                                  | off     |         |
-| jsx-quotes                                     | off     |         |
-| key-spacing                                    | off     |         |
-| keyword-spacing                                | off     |         |
-| linebreak-style                                | off     |         |
-| lines-around-comment                           | 0       |         |
-| max-len                                        | 0       |         |
-| multiline-ternary                              | off     |         |
-| new-parens                                     | off     |         |
-| newline-per-chained-call                       | off     |         |
-| no-arrow-condition                             | off     |         |
-| no-comma-dangle                                | off     |         |
-| no-confusing-arrow                             | 0       |         |
-| no-extra-parens                                | off     |         |
-| no-extra-semi                                  | off     |         |
-| no-floating-decimal                            | off     |         |
-| no-mixed-operators                             | 0       |         |
-| no-mixed-spaces-and-tabs                       | off     |         |
-| no-multi-spaces                                | off     |         |
-| no-multiple-empty-lines                        | off     |         |
-| no-reserved-keys                               | off     |         |
-| no-space-before-semi                           | off     |         |
-| no-spaced-func                                 | off     |         |
-| no-tabs                                        | 0       |         |
-| no-trailing-spaces                             | off     |         |
-| no-unexpected-multiline                        | 0       |         |
-| no-whitespace-before-property                  | off     |         |
-| no-wrap-func                                   | off     |         |
-| nonblock-statement-body-position               | off     |         |
-| object-curly-newline                           | off     |         |
-| object-curly-spacing                           | off     |         |
-| object-property-newline                        | off     |         |
-| one-var-declaration-per-line                   | off     |         |
-| operator-linebreak                             | off     |         |
-| padded-blocks                                  | off     |         |
-| quote-props                                    | off     |         |
-| quotes                                         | 0       |         |
-| rest-spread-spacing                            | off     |         |
-| semi                                           | off     |         |
-| semi-spacing                                   | off     |         |
-| semi-style                                     | off     |         |
-| space-after-function-name                      | off     |         |
-| space-after-keywords                           | off     |         |
-| space-before-blocks                            | off     |         |
-| space-before-function-paren                    | off     |         |
-| space-before-function-parentheses              | off     |         |
-| space-before-keywords                          | off     |         |
-| space-in-brackets                              | off     |         |
-| space-in-parens                                | off     |         |
-| space-infix-ops                                | off     |         |
-| space-return-throw-case                        | off     |         |
-| space-unary-ops                                | off     |         |
-| space-unary-word-ops                           | off     |         |
-| switch-colon-spacing                           | off     |         |
-| template-curly-spacing                         | off     |         |
-| template-tag-spacing                           | off     |         |
-| unicode-bom                                    | off     |         |
-| wrap-iife                                      | off     |         |
-| wrap-regex                                     | off     |         |
-| yield-star-spacing                             | off     |         |
-| @babel/object-curly-spacing                    | off     |         |
-| @babel/semi                                    | off     |         |
-| @typescript-eslint/block-spacing               | off     |         |
-| @typescript-eslint/brace-style                 | off     |         |
-| @typescript-eslint/comma-dangle                | off     |         |
-| @typescript-eslint/comma-spacing               | off     |         |
-| @typescript-eslint/func-call-spacing           | off     |         |
-| @typescript-eslint/indent                      | off     |         |
-| @typescript-eslint/key-spacing                 | off     |         |
-| @typescript-eslint/keyword-spacing             | off     |         |
-| @typescript-eslint/lines-around-comment        | 0       |         |
-| @typescript-eslint/member-delimiter-style      | off     |         |
-| @typescript-eslint/no-extra-parens             | off     |         |
-| @typescript-eslint/no-extra-semi               | off     |         |
-| @typescript-eslint/object-curly-spacing        | off     |         |
-| @typescript-eslint/quotes                      | 0       |         |
-| @typescript-eslint/semi                        | off     |         |
-| @typescript-eslint/space-before-blocks         | off     |         |
-| @typescript-eslint/space-before-function-paren | off     |         |
-| @typescript-eslint/space-infix-ops             | off     |         |
-| @typescript-eslint/type-annotation-spacing     | off     |         |
-| babel/object-curly-spacing                     | off     |         |
-| babel/quotes                                   | 0       |         |
-| babel/semi                                     | off     |         |
-| flowtype/boolean-style                         | off     |         |
-| flowtype/delimiter-dangle                      | off     |         |
-| flowtype/generic-spacing                       | off     |         |
-| flowtype/object-type-curly-spacing             | off     |         |
-| flowtype/object-type-delimiter                 | off     |         |
-| flowtype/quotes                                | off     |         |
-| flowtype/semi                                  | off     |         |
-| flowtype/space-after-type-colon                | off     |         |
-| flowtype/space-before-generic-bracket          | off     |         |
-| flowtype/space-before-type-colon               | off     |         |
-| flowtype/union-intersection-spacing            | off     |         |
-| prettier/prettier                              | warn    |         |
-| react/jsx-child-element-spacing                | off     |         |
-| react/jsx-closing-bracket-location             | off     |         |
-| react/jsx-closing-tag-location                 | off     |         |
-| react/jsx-curly-newline                        | off     |         |
-| react/jsx-curly-spacing                        | off     |         |
-| react/jsx-equals-spacing                       | off     |         |
-| react/jsx-first-prop-new-line                  | off     |         |
-| react/jsx-indent                               | off     |         |
-| react/jsx-indent-props                         | off     |         |
-| react/jsx-max-props-per-line                   | off     |         |
-| react/jsx-newline                              | off     |         |
-| react/jsx-one-expression-per-line              | off     |         |
-| react/jsx-props-no-multi-spaces                | off     |         |
-| react/jsx-space-before-closing                 | off     |         |
-| react/jsx-tag-spacing                          | off     |         |
-| react/jsx-wrap-multilines                      | off     |         |
-| standard/array-bracket-even-spacing            | off     |         |
-| standard/computed-property-even-spacing        | off     |         |
-| standard/object-curly-even-spacing             | off     |         |
-| unicorn/empty-brace-spaces                     | off     |         |
-| unicorn/no-nested-ternary                      | off     |         |
-| unicorn/number-literal-case                    | off     |         |
-| vue/array-bracket-newline                      | off     |         |
-| vue/array-bracket-spacing                      | off     |         |
-| vue/arrow-spacing                              | off     |         |
-| vue/block-spacing                              | off     |         |
-| vue/block-tag-newline                          | off     |         |
-| vue/brace-style                                | off     |         |
-| vue/comma-dangle                               | off     |         |
-| vue/comma-spacing                              | off     |         |
-| vue/comma-style                                | off     |         |
-| vue/dot-location                               | off     |         |
-| vue/func-call-spacing                          | off     |         |
-| vue/html-closing-bracket-newline               | off     |         |
-| vue/html-closing-bracket-spacing               | off     |         |
-| vue/html-end-tags                              | off     |         |
-| vue/html-indent                                | off     |         |
-| vue/html-quotes                                | off     |         |
-| vue/html-self-closing                          | 0       |         |
-| vue/key-spacing                                | off     |         |
-| vue/keyword-spacing                            | off     |         |
-| vue/max-attributes-per-line                    | off     |         |
-| vue/max-len                                    | 0       |         |
-| vue/multiline-html-element-content-newline     | off     |         |
-| vue/multiline-ternary                          | off     |         |
-| vue/mustache-interpolation-spacing             | off     |         |
-| vue/no-extra-parens                            | off     |         |
-| vue/no-multi-spaces                            | off     |         |
-| vue/no-spaces-around-equal-signs-in-attribute  | off     |         |
-| vue/object-curly-newline                       | off     |         |
-| vue/object-curly-spacing                       | off     |         |
-| vue/object-property-newline                    | off     |         |
-| vue/operator-linebreak                         | off     |         |
-| vue/quote-props                                | off     |         |
-| vue/script-indent                              | off     |         |
-| vue/singleline-html-element-content-newline    | off     |         |
-| vue/space-in-parens                            | off     |         |
-| vue/space-infix-ops                            | off     |         |
-| vue/space-unary-ops                            | off     |         |
-| vue/template-curly-spacing                     | off     |         |
+| Rule                                                                                                                                           | Description                                                                                    | Enabled | Options |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------- | ------- |
+| [array-bracket-newline](https://eslint.org/docs/rules/array-bracket-newline)                                                                   | Enforce linebreaks after opening and before closing array brackets                             | off     |
+| [array-bracket-spacing](https://eslint.org/docs/rules/array-bracket-spacing)                                                                   | Enforce consistent spacing inside array brackets                                               | off     |
+| [array-element-newline](https://eslint.org/docs/rules/array-element-newline)                                                                   | Enforce line breaks after each array element                                                   | off     |
+| [arrow-parens](https://eslint.org/docs/rules/arrow-parens)                                                                                     | Require parentheses around arrow function arguments                                            | off     |
+| [arrow-spacing](https://eslint.org/docs/rules/arrow-spacing)                                                                                   | Enforce consistent spacing before and after the arrow in arrow functions                       | off     |
+| [block-spacing](https://eslint.org/docs/rules/block-spacing)                                                                                   | Disallow or enforce spaces inside of blocks after opening block and before closing block       | off     |
+| [brace-style](https://eslint.org/docs/rules/brace-style)                                                                                       | Enforce consistent brace style for blocks                                                      | off     |
+| [comma-dangle](https://eslint.org/docs/rules/comma-dangle)                                                                                     | Require or disallow trailing commas                                                            | off     |
+| [comma-spacing](https://eslint.org/docs/rules/comma-spacing)                                                                                   | Enforce consistent spacing before and after commas                                             | off     |
+| [comma-style](https://eslint.org/docs/rules/comma-style)                                                                                       | Enforce consistent comma style                                                                 | off     |
+| [computed-property-spacing](https://eslint.org/docs/rules/computed-property-spacing)                                                           | Enforce consistent spacing inside computed property brackets                                   | off     |
+| [curly](https://eslint.org/docs/rules/curly)                                                                                                   | Enforce consistent brace style for all control statements                                      | 0       |
+| [dot-location](https://eslint.org/docs/rules/dot-location)                                                                                     | Enforce consistent newlines before and after dots                                              | off     |
+| [eol-last](https://eslint.org/docs/rules/eol-last)                                                                                             | Require or disallow newline at the end of files                                                | off     |
+| [func-call-spacing](https://eslint.org/docs/rules/func-call-spacing)                                                                           | Require or disallow spacing between function identifiers and their invocations                 | off     |
+| [function-call-argument-newline](https://eslint.org/docs/rules/function-call-argument-newline)                                                 | Enforce line breaks between arguments of a function call                                       | off     |
+| [function-paren-newline](https://eslint.org/docs/rules/function-paren-newline)                                                                 | Enforce consistent line breaks inside function parentheses                                     | off     |
+| generator-star                                                                                                                                 |                                                                                                | off     |
+| [generator-star-spacing](https://eslint.org/docs/rules/generator-star-spacing)                                                                 | Enforce consistent spacing around `*` operators in generator functions                         | off     |
+| [implicit-arrow-linebreak](https://eslint.org/docs/rules/implicit-arrow-linebreak)                                                             | Enforce the location of arrow function bodies                                                  | off     |
+| [indent](https://eslint.org/docs/rules/indent)                                                                                                 | Enforce consistent indentation                                                                 | off     |
+| [indent-legacy](https://eslint.org/docs/rules/indent-legacy)                                                                                   | Enforce consistent indentation                                                                 | off     |
+| [jsx-quotes](https://eslint.org/docs/rules/jsx-quotes)                                                                                         | Enforce the consistent use of either double or single quotes in JSX attributes                 | off     |
+| [key-spacing](https://eslint.org/docs/rules/key-spacing)                                                                                       | Enforce consistent spacing between keys and values in object literal properties                | off     |
+| [keyword-spacing](https://eslint.org/docs/rules/keyword-spacing)                                                                               | Enforce consistent spacing before and after keywords                                           | off     |
+| [linebreak-style](https://eslint.org/docs/rules/linebreak-style)                                                                               | Enforce consistent linebreak style                                                             | off     |
+| [lines-around-comment](https://eslint.org/docs/rules/lines-around-comment)                                                                     | Require empty lines around comments                                                            | 0       |
+| [max-len](https://eslint.org/docs/rules/max-len)                                                                                               | Enforce a maximum line length                                                                  | 0       |
+| [multiline-ternary](https://eslint.org/docs/rules/multiline-ternary)                                                                           | Enforce newlines between operands of ternary expressions                                       | off     |
+| [new-parens](https://eslint.org/docs/rules/new-parens)                                                                                         | Enforce or disallow parentheses when invoking a constructor with no arguments                  | off     |
+| [newline-per-chained-call](https://eslint.org/docs/rules/newline-per-chained-call)                                                             | Require a newline after each call in a method chain                                            | off     |
+| no-arrow-condition                                                                                                                             |                                                                                                | off     |
+| no-comma-dangle                                                                                                                                |                                                                                                | off     |
+| [no-confusing-arrow](https://eslint.org/docs/rules/no-confusing-arrow)                                                                         | Disallow arrow functions where they could be confused with comparisons                         | 0       |
+| [no-extra-parens](https://eslint.org/docs/rules/no-extra-parens)                                                                               | Disallow unnecessary parentheses                                                               | off     |
+| [no-extra-semi](https://eslint.org/docs/rules/no-extra-semi)                                                                                   | Disallow unnecessary semicolons                                                                | off     |
+| [no-floating-decimal](https://eslint.org/docs/rules/no-floating-decimal)                                                                       | Disallow leading or trailing decimal points in numeric literals                                | off     |
+| [no-mixed-operators](https://eslint.org/docs/rules/no-mixed-operators)                                                                         | Disallow mixed binary operators                                                                | 0       |
+| [no-mixed-spaces-and-tabs](https://eslint.org/docs/rules/no-mixed-spaces-and-tabs)                                                             | Disallow mixed spaces and tabs for indentation                                                 | off     |
+| [no-multi-spaces](https://eslint.org/docs/rules/no-multi-spaces)                                                                               | Disallow multiple spaces                                                                       | off     |
+| [no-multiple-empty-lines](https://eslint.org/docs/rules/no-multiple-empty-lines)                                                               | Disallow multiple empty lines                                                                  | off     |
+| no-reserved-keys                                                                                                                               |                                                                                                | off     |
+| no-space-before-semi                                                                                                                           |                                                                                                | off     |
+| [no-spaced-func](https://eslint.org/docs/rules/no-spaced-func)                                                                                 | Disallow spacing between function identifiers and their applications (deprecated)              | off     |
+| [no-tabs](https://eslint.org/docs/rules/no-tabs)                                                                                               | Disallow all tabs                                                                              | 0       |
+| [no-trailing-spaces](https://eslint.org/docs/rules/no-trailing-spaces)                                                                         | Disallow trailing whitespace at the end of lines                                               | off     |
+| [no-unexpected-multiline](https://eslint.org/docs/rules/no-unexpected-multiline)                                                               | Disallow confusing multiline expressions                                                       | 0       |
+| [no-whitespace-before-property](https://eslint.org/docs/rules/no-whitespace-before-property)                                                   | Disallow whitespace before properties                                                          | off     |
+| no-wrap-func                                                                                                                                   |                                                                                                | off     |
+| [nonblock-statement-body-position](https://eslint.org/docs/rules/nonblock-statement-body-position)                                             | Enforce the location of single-line statements                                                 | off     |
+| [object-curly-newline](https://eslint.org/docs/rules/object-curly-newline)                                                                     | Enforce consistent line breaks after opening and before closing braces                         | off     |
+| [object-curly-spacing](https://eslint.org/docs/rules/object-curly-spacing)                                                                     | Enforce consistent spacing inside braces                                                       | off     |
+| [object-property-newline](https://eslint.org/docs/rules/object-property-newline)                                                               | Enforce placing object properties on separate lines                                            | off     |
+| [one-var-declaration-per-line](https://eslint.org/docs/rules/one-var-declaration-per-line)                                                     | Require or disallow newlines around variable declarations                                      | off     |
+| [operator-linebreak](https://eslint.org/docs/rules/operator-linebreak)                                                                         | Enforce consistent linebreak style for operators                                               | off     |
+| [padded-blocks](https://eslint.org/docs/rules/padded-blocks)                                                                                   | Require or disallow padding within blocks                                                      | off     |
+| [quote-props](https://eslint.org/docs/rules/quote-props)                                                                                       | Require quotes around object literal property names                                            | off     |
+| [quotes](https://eslint.org/docs/rules/quotes)                                                                                                 | Enforce the consistent use of either backticks, double, or single quotes                       | 0       |
+| [rest-spread-spacing](https://eslint.org/docs/rules/rest-spread-spacing)                                                                       | Enforce spacing between rest and spread operators and their expressions                        | off     |
+| [semi](https://eslint.org/docs/rules/semi)                                                                                                     | Require or disallow semicolons instead of ASI                                                  | off     |
+| [semi-spacing](https://eslint.org/docs/rules/semi-spacing)                                                                                     | Enforce consistent spacing before and after semicolons                                         | off     |
+| [semi-style](https://eslint.org/docs/rules/semi-style)                                                                                         | Enforce location of semicolons                                                                 | off     |
+| space-after-function-name                                                                                                                      |                                                                                                | off     |
+| space-after-keywords                                                                                                                           |                                                                                                | off     |
+| [space-before-blocks](https://eslint.org/docs/rules/space-before-blocks)                                                                       | Enforce consistent spacing before blocks                                                       | off     |
+| [space-before-function-paren](https://eslint.org/docs/rules/space-before-function-paren)                                                       | Enforce consistent spacing before `function` definition opening parenthesis                    | off     |
+| space-before-function-parentheses                                                                                                              |                                                                                                | off     |
+| space-before-keywords                                                                                                                          |                                                                                                | off     |
+| space-in-brackets                                                                                                                              |                                                                                                | off     |
+| [space-in-parens](https://eslint.org/docs/rules/space-in-parens)                                                                               | Enforce consistent spacing inside parentheses                                                  | off     |
+| [space-infix-ops](https://eslint.org/docs/rules/space-infix-ops)                                                                               | Require spacing around infix operators                                                         | off     |
+| space-return-throw-case                                                                                                                        |                                                                                                | off     |
+| [space-unary-ops](https://eslint.org/docs/rules/space-unary-ops)                                                                               | Enforce consistent spacing before or after unary operators                                     | off     |
+| space-unary-word-ops                                                                                                                           |                                                                                                | off     |
+| [switch-colon-spacing](https://eslint.org/docs/rules/switch-colon-spacing)                                                                     | Enforce spacing around colons of switch statements                                             | off     |
+| [template-curly-spacing](https://eslint.org/docs/rules/template-curly-spacing)                                                                 | Require or disallow spacing around embedded expressions of template strings                    | off     |
+| [template-tag-spacing](https://eslint.org/docs/rules/template-tag-spacing)                                                                     | Require or disallow spacing between template tags and their literals                           | off     |
+| [unicode-bom](https://eslint.org/docs/rules/unicode-bom)                                                                                       | Require or disallow Unicode byte order mark (BOM)                                              | off     |
+| [wrap-iife](https://eslint.org/docs/rules/wrap-iife)                                                                                           | Require parentheses around immediate `function` invocations                                    | off     |
+| [wrap-regex](https://eslint.org/docs/rules/wrap-regex)                                                                                         | Require parenthesis around regex literals                                                      | off     |
+| [yield-star-spacing](https://eslint.org/docs/rules/yield-star-spacing)                                                                         | Require or disallow spacing around the `*` in `yield*` expressions                             | off     |
+| @babel/object-curly-spacing                                                                                                                    |                                                                                                | off     |
+| @babel/semi                                                                                                                                    |                                                                                                | off     |
+| [@typescript-eslint/block-spacing](https://typescript-eslint.io/rules/block-spacing)                                                           | Disallow or enforce spaces inside of blocks after opening block and before closing block       | off     |
+| [@typescript-eslint/brace-style](https://typescript-eslint.io/rules/brace-style)                                                               | Enforce consistent brace style for blocks                                                      | off     |
+| [@typescript-eslint/comma-dangle](https://typescript-eslint.io/rules/comma-dangle)                                                             | Require or disallow trailing commas                                                            | off     |
+| [@typescript-eslint/comma-spacing](https://typescript-eslint.io/rules/comma-spacing)                                                           | Enforce consistent spacing before and after commas                                             | off     |
+| [@typescript-eslint/func-call-spacing](https://typescript-eslint.io/rules/func-call-spacing)                                                   | Require or disallow spacing between function identifiers and their invocations                 | off     |
+| [@typescript-eslint/indent](https://typescript-eslint.io/rules/indent)                                                                         | Enforce consistent indentation                                                                 | off     |
+| [@typescript-eslint/key-spacing](https://typescript-eslint.io/rules/key-spacing)                                                               | Enforce consistent spacing between property names and type annotations in types and interfaces | off     |
+| [@typescript-eslint/keyword-spacing](https://typescript-eslint.io/rules/keyword-spacing)                                                       | Enforce consistent spacing before and after keywords                                           | off     |
+| [@typescript-eslint/lines-around-comment](https://typescript-eslint.io/rules/lines-around-comment)                                             | Require empty lines around comments                                                            | 0       |
+| [@typescript-eslint/member-delimiter-style](https://typescript-eslint.io/rules/member-delimiter-style)                                         | Require a specific member delimiter style for interfaces and type literals                     | off     |
+| [@typescript-eslint/no-extra-parens](https://typescript-eslint.io/rules/no-extra-parens)                                                       | Disallow unnecessary parentheses                                                               | off     |
+| [@typescript-eslint/no-extra-semi](https://typescript-eslint.io/rules/no-extra-semi)                                                           | Disallow unnecessary semicolons                                                                | off     |
+| [@typescript-eslint/object-curly-spacing](https://typescript-eslint.io/rules/object-curly-spacing)                                             | Enforce consistent spacing inside braces                                                       | off     |
+| [@typescript-eslint/quotes](https://typescript-eslint.io/rules/quotes)                                                                         | Enforce the consistent use of either backticks, double, or single quotes                       | 0       |
+| [@typescript-eslint/semi](https://typescript-eslint.io/rules/semi)                                                                             | Require or disallow semicolons instead of ASI                                                  | off     |
+| [@typescript-eslint/space-before-blocks](https://typescript-eslint.io/rules/space-before-blocks)                                               | Enforce consistent spacing before blocks                                                       | off     |
+| [@typescript-eslint/space-before-function-paren](https://typescript-eslint.io/rules/space-before-function-paren)                               | Enforce consistent spacing before function parenthesis                                         | off     |
+| [@typescript-eslint/space-infix-ops](https://typescript-eslint.io/rules/space-infix-ops)                                                       | Require spacing around infix operators                                                         | off     |
+| [@typescript-eslint/type-annotation-spacing](https://typescript-eslint.io/rules/type-annotation-spacing)                                       | Require consistent spacing around type annotations                                             | off     |
+| babel/object-curly-spacing                                                                                                                     |                                                                                                | off     |
+| babel/quotes                                                                                                                                   |                                                                                                | 0       |
+| babel/semi                                                                                                                                     |                                                                                                | off     |
+| flowtype/boolean-style                                                                                                                         |                                                                                                | off     |
+| flowtype/delimiter-dangle                                                                                                                      |                                                                                                | off     |
+| flowtype/generic-spacing                                                                                                                       |                                                                                                | off     |
+| flowtype/object-type-curly-spacing                                                                                                             |                                                                                                | off     |
+| flowtype/object-type-delimiter                                                                                                                 |                                                                                                | off     |
+| flowtype/quotes                                                                                                                                |                                                                                                | off     |
+| flowtype/semi                                                                                                                                  |                                                                                                | off     |
+| flowtype/space-after-type-colon                                                                                                                |                                                                                                | off     |
+| flowtype/space-before-generic-bracket                                                                                                          |                                                                                                | off     |
+| flowtype/space-before-type-colon                                                                                                               |                                                                                                | off     |
+| flowtype/union-intersection-spacing                                                                                                            |                                                                                                | off     |
+| [prettier/prettier](https://github.com/prettier/eslint-plugin-prettier#options)                                                                |                                                                                                | warn    |
+| [react/jsx-child-element-spacing](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-child-element-spacing.md)       | Enforce or disallow spaces inside of curly braces in JSX attributes and expressions            | off     |
+| [react/jsx-closing-bracket-location](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-closing-bracket-location.md) | Enforce closing bracket location in JSX                                                        | off     |
+| [react/jsx-closing-tag-location](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-closing-tag-location.md)         | Enforce closing tag location for multiline JSX                                                 | off     |
+| [react/jsx-curly-newline](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-curly-newline.md)                       | Enforce consistent linebreaks in curly braces in JSX attributes and expressions                | off     |
+| [react/jsx-curly-spacing](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-curly-spacing.md)                       | Enforce or disallow spaces inside of curly braces in JSX attributes and expressions            | off     |
+| [react/jsx-equals-spacing](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-equals-spacing.md)                     | Enforce or disallow spaces around equal signs in JSX attributes                                | off     |
+| [react/jsx-first-prop-new-line](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-first-prop-new-line.md)           | Enforce proper position of the first property in JSX                                           | off     |
+| [react/jsx-indent](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-indent.md)                                     | Enforce JSX indentation                                                                        | off     |
+| [react/jsx-indent-props](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-indent-props.md)                         | Enforce props indentation in JSX                                                               | off     |
+| [react/jsx-max-props-per-line](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-max-props-per-line.md)             | Enforce maximum of props on a single line in JSX                                               | off     |
+| [react/jsx-newline](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-newline.md)                                   | Require or prevent a new line after jsx elements and expressions.                              | off     |
+| [react/jsx-one-expression-per-line](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-one-expression-per-line.md)   | Require one JSX element per line                                                               | off     |
+| [react/jsx-props-no-multi-spaces](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-props-no-multi-spaces.md)       | Disallow multiple spaces between inline JSX props                                              | off     |
+| [react/jsx-space-before-closing](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-space-before-closing.md)         | Enforce spacing before closing bracket in JSX                                                  | off     |
+| [react/jsx-tag-spacing](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-tag-spacing.md)                           | Enforce whitespace in and around the JSX opening and closing brackets                          | off     |
+| [react/jsx-wrap-multilines](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-wrap-multilines.md)                   | Disallow missing parentheses around multiline JSX                                              | off     |
+| standard/array-bracket-even-spacing                                                                                                            |                                                                                                | off     |
+| standard/computed-property-even-spacing                                                                                                        |                                                                                                | off     |
+| standard/object-curly-even-spacing                                                                                                             |                                                                                                | off     |
+| [unicorn/empty-brace-spaces](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/empty-brace-spaces.md)              | Enforce no spaces between braces.                                                              | off     |
+| [unicorn/no-nested-ternary](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/no-nested-ternary.md)                | Disallow nested ternary expressions.                                                           | off     |
+| [unicorn/number-literal-case](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/number-literal-case.md)            | Enforce proper case for numeric literals.                                                      | off     |
+| vue/array-bracket-newline                                                                                                                      |                                                                                                | off     |
+| vue/array-bracket-spacing                                                                                                                      |                                                                                                | off     |
+| vue/arrow-spacing                                                                                                                              |                                                                                                | off     |
+| vue/block-spacing                                                                                                                              |                                                                                                | off     |
+| vue/block-tag-newline                                                                                                                          |                                                                                                | off     |
+| vue/brace-style                                                                                                                                |                                                                                                | off     |
+| vue/comma-dangle                                                                                                                               |                                                                                                | off     |
+| vue/comma-spacing                                                                                                                              |                                                                                                | off     |
+| vue/comma-style                                                                                                                                |                                                                                                | off     |
+| vue/dot-location                                                                                                                               |                                                                                                | off     |
+| vue/func-call-spacing                                                                                                                          |                                                                                                | off     |
+| vue/html-closing-bracket-newline                                                                                                               |                                                                                                | off     |
+| vue/html-closing-bracket-spacing                                                                                                               |                                                                                                | off     |
+| vue/html-end-tags                                                                                                                              |                                                                                                | off     |
+| vue/html-indent                                                                                                                                |                                                                                                | off     |
+| vue/html-quotes                                                                                                                                |                                                                                                | off     |
+| vue/html-self-closing                                                                                                                          |                                                                                                | 0       |
+| vue/key-spacing                                                                                                                                |                                                                                                | off     |
+| vue/keyword-spacing                                                                                                                            |                                                                                                | off     |
+| vue/max-attributes-per-line                                                                                                                    |                                                                                                | off     |
+| vue/max-len                                                                                                                                    |                                                                                                | 0       |
+| vue/multiline-html-element-content-newline                                                                                                     |                                                                                                | off     |
+| vue/multiline-ternary                                                                                                                          |                                                                                                | off     |
+| vue/mustache-interpolation-spacing                                                                                                             |                                                                                                | off     |
+| vue/no-extra-parens                                                                                                                            |                                                                                                | off     |
+| vue/no-multi-spaces                                                                                                                            |                                                                                                | off     |
+| vue/no-spaces-around-equal-signs-in-attribute                                                                                                  |                                                                                                | off     |
+| vue/object-curly-newline                                                                                                                       |                                                                                                | off     |
+| vue/object-curly-spacing                                                                                                                       |                                                                                                | off     |
+| vue/object-property-newline                                                                                                                    |                                                                                                | off     |
+| vue/operator-linebreak                                                                                                                         |                                                                                                | off     |
+| vue/quote-props                                                                                                                                |                                                                                                | off     |
+| vue/script-indent                                                                                                                              |                                                                                                | off     |
+| vue/singleline-html-element-content-newline                                                                                                    |                                                                                                | off     |
+| vue/space-in-parens                                                                                                                            |                                                                                                | off     |
+| vue/space-infix-ops                                                                                                                            |                                                                                                | off     |
+| vue/space-unary-ops                                                                                                                            |                                                                                                | off     |
+| vue/template-curly-spacing                                                                                                                     |                                                                                                | off     |
