@@ -53,7 +53,7 @@ function renderRules(rules) {
       const description = meta?.docs?.description ?? '';
 
       if (Array.isArray(value)) {
-        return [ruleName, description, value[0], value[1] ? `\`${JSON.stringify(value[1])}\`` : ''];
+        return [ruleName, description, value[0], wrapOptions(value[1])];
       }
       return [ruleName, description, value, ''];
     })
@@ -69,4 +69,13 @@ function compareRuleKeys(a, b) {
   if (a.includes('/') && !b.includes('/')) return 1;
   if (!a.includes('/') && b.includes('/')) return -1;
   return a.localeCompare(b);
+}
+
+/**
+ * @param {object} options
+ * @returns {string}
+ */
+function wrapOptions(options) {
+  if (!options) return '';
+  return `<details><summary>Click to expand</summary>\`${JSON.stringify(options, null, 2)}\`</details>`;
 }
