@@ -12,9 +12,12 @@
     "trailingComma": "all"
   },
   "devDependencies": {
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@types/eslint": "^8.37.0",
     "husky": "^8.0.3",
     "prettier": "2.8.7",
+    "semantic-release": "^21.0.1",
     "table": "^6.8.1",
     "typescript": "5.0.4",
     "vite": "^4.3.1",

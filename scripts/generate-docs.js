@@ -1,66 +1,32 @@
 // @ts-check
 
-const { ESLint } = require('eslint');
-const Prettier = require('prettier');
+const prettier = require('prettier');
 const path = require('node:path');
 const fs = require('node:fs/promises');
 const util = require('node:util');
 const exec = util.promisify(require('node:child_process').exec);
 
-const rootDir = path.join(__dirname, '../packages/eslint-config-emperor');
-const configs = {
-  'base (js)': { file: 'index.js', out: 'base_js.md', test: 'index.js' },
-  'base (ts)': { file: 'index.js', out: 'base_ts.md', test: 'index.ts' },
-  'base/style (js)': { file: 'style.js', out: 'base-style_js.md', test: 'index.js' },
-  'base/style (ts)': { file: 'style.js', out: 'base-style_ts.md', test: 'index.ts' },
-  'react (js)': { file: 'react/index.js', out: 'react_js.md', test: 'index.js' },
-  'react (ts)': { file: 'react/index.js', out: 'react_ts.md', test: 'index.ts' },
-  'react/style (js)': { file: 'react/style.js', out: 'react-style_js.md', test: 'index.js' },
-  'react/style (ts)': { file: 'react/style.js', out: 'react-style_ts.md', test: 'index.ts' },
-  prettier: { file: 'prettier.js', out: 'prettier.md', test: 'index.js' },
-};
-const outDir = path.join(rootDir, 'docs');
+const { getRules, paths } = require('./config');
 
 main();
 
 async function main() {
-  await fs.rm(outDir, { recursive: true });
-  const promises = Object.entries(configs).map(
-    async ([label, { file, out: outFile, test: testFile }]) => {
-      const config = await getConfig(file, testFile);
-      const { rules, ...rest } = config;
-      const configTable = renderRecord(rest);
-      const rulesTable = renderRules(rules);
+  await fs.rm(paths.docsDir, { recursive: true });
+  const promises = (await getRules()).map(async ({ label, config, outFile }) => {
+    const { rules, ...rest } = config;
+    const configTable = renderRecord(rest);
+    const rulesTable = renderRules(rules);
 
-      const fileName = path.join(outDir, outFile);
-      const warning = `<!-- This file is auto-generated. Do not edit it directly. -->\n\n`;
-      const content = `${warning}# ${label}\n\n## Config\n\n${configTable}\n\n## Rules\n\n${rulesTable}`;
+    const fileName = path.join(paths.docsDir, outFile);
+    const warning = `<!-- This file is auto-generated. Do not edit it directly. -->\n\n`;
+    const content = `${warning}# ${label}\n\n## Config\n\n${configTable}\n\n## Rules\n\n${rulesTable}`;
 
-      const formatted = Prettier.format(content, { parser: 'markdown' });
-      await fs.mkdir(path.dirname(fileName), { recursive: true });
-      await fs.writeFile(fileName, formatted);
-      await exec(`git add ${fileName}`);
-    },
-  );
-  await Promise.all(promises);
-}
-
-async function getConfig(configFile, testFile) {
-  const eslint = new ESLint({
-    baseConfig: {
-      extends: [path.join(rootDir, configFile)],
-    },
-    useEslintrc: false,
-    cwd: rootDir,
+    const formatted = prettier.format(content, { parser: 'markdown' });
+    await fs.mkdir(path.dirname(fileName), { recursive: true });
+    await fs.writeFile(fileName, formatted);
+    await exec(`git add ${fileName}`);
   });
-  const config = await eslint.calculateConfigForFile(testFile);
-  config.parser = removeAbsolutePath(config.parser);
-  return config;
-}
-
-function removeAbsolutePath(pathToFile) {
-  if (!pathToFile) return pathToFile;
-  return pathToFile.split('node_modules').pop();
+  await Promise.all(promises);
 }
 
 function renderRecord(record) {
