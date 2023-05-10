@@ -2,7 +2,6 @@
 
 process.env.NODE_ENV = 'test';
 
-const prettier = require('prettier');
 const path = require('node:path');
 const fs = require('node:fs/promises');
 const util = require('node:util');
@@ -24,26 +23,22 @@ async function main() {
     const warning = `<!-- This file is auto-generated. Do not edit it directly. -->\n\n`;
     const content = `${warning}# ${label}\n\n## Config\n\n${configTable}\n\n## Rules\n\n${rulesTable}`;
 
-    const formatted = prettier.format(content, { parser: 'markdown' });
     await fs.mkdir(path.dirname(fileName), { recursive: true });
-    await fs.writeFile(fileName, formatted);
+    await fs.writeFile(fileName, content);
     await exec(`git add ${fileName}`);
   });
   await Promise.all(promises);
 }
 
 function renderRecord(record) {
-  const header = '| Key | Value |';
-  const spacer = '| --- | --- |';
-  const rows = Object.entries(record).map(
-    ([key, value]) => `| ${key} | \`${JSON.stringify(value)}\` |`,
-  );
-  return [header, spacer, ...rows].join('\n');
+  const rows = Object.entries(record).map(([key, value]) => [
+    key,
+    `<code>${JSON.stringify(value)}</code>`,
+  ]);
+  return renderTable({ header: ['Key', 'Value'], rows });
 }
 
 function renderRules(rules) {
-  const header = '| Rule | Description | Enabled | Options';
-  const spacer = '| --- | --- | --- | --- |';
   const rows = Object.entries(rules)
     .sort(([a], [b]) => compareRuleKeys(a, b))
     .map(([key, value]) => {
@@ -56,9 +51,8 @@ function renderRules(rules) {
         return [ruleName, description, value[0], wrapOptions(value[1])];
       }
       return [ruleName, description, value, ''];
-    })
-    .map((entry) => `| ${entry.join(' | ')} |`);
-  return [header, spacer, ...rows].join('\n');
+    });
+  return renderTable({ header: ['Rule', 'Description', 'Enabled', 'Options'], rows });
 }
 
 /**
@@ -77,5 +71,18 @@ function compareRuleKeys(a, b) {
  */
 function wrapOptions(options) {
   if (!options) return '';
-  return `<details><summary>Click to expand</summary>\`${JSON.stringify(options)}\`</details>`;
+  return `<details><summary>Show</summary><code>${JSON.stringify(options)}</code></details>`;
+}
+
+/**
+ * @param {Object} options
+ * @param {string[]} options.header
+ * @param {string[][]} options.rows
+ * @returns {string}
+ */
+function renderTable({ header, rows }) {
+  return `| ${header.join(' | ')} |
+| ${header.map(() => '---').join(' | ')} |
+${rows.map((row) => `| ${row.join(' | ')} |`).join('\n')}
+`;
 }
