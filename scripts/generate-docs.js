@@ -77,5 +77,5 @@ function compareRuleKeys(a, b) {
  */
 function wrapOptions(options) {
   if (!options) return '';
-  return `<details><summary>Click to expand</summary>\`${JSON.stringify(options, null, 2)}\`</details>`;
+  return `<details><summary>Click to expand</summary>\`${JSON.stringify(options)}\`</details>`;
 }
