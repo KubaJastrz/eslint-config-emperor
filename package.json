@@ -2,6 +2,7 @@
   "name": "eslint-config-emperor",
   "private": true,
   "scripts": {
+    "website": "cd website && pnpm dev",
     "format": "prettier --write .",
     "generate-docs": "node scripts/generate-docs.js",
     "test": "vitest"

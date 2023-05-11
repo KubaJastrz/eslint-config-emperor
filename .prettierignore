@@ -1,2 +1,4 @@
 node_modules/
 pnpm-lock.yaml
+packages/eslint-config-emperor/docs/
+packages/eslint-config-emperor/.release-snapshot.json

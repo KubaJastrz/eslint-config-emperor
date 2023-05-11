@@ -17,7 +17,6 @@ npm create astro@latest -- --template docs
 - ✅ **Full Markdown support**
 - ✅ **Responsive mobile-friendly design**
 - ✅ **Sidebar navigation**
-- ✅ **Search (powered by Algolia)**
 - ✅ **Multi-language i18n**
 - ✅ **Automatic table of contents**
 - ✅ **Automatic list of contributors**
@@ -87,13 +86,13 @@ The sidebar navigation is controlled by the `SIDEBAR` variable in your `src/cons
 ```ts
 export const SIDEBAR = {
   en: {
-		'Section Header': [
-			{ text: 'Introduction', link: 'en/introduction' },
-			{ text: 'Page 2', link: 'en/page-2' },
-			{ text: 'Page 3', link: 'en/page-3' },
-		],
-		'Another Section': [{ text: 'Page 4', link: 'en/page-4' }],
-	},
+    'Section Header': [
+      { text: 'Introduction', link: 'en/introduction' },
+      { text: 'Page 2', link: 'en/page-2' },
+      { text: 'Page 3', link: 'en/page-3' },
+    ],
+    'Another Section': [{ text: 'Page 4', link: 'en/page-4' }],
+  },
 };
 ```
 
@@ -169,11 +168,3 @@ You can also remove the above script and write a landing page in Spanish instead
 That's totally fine! Not all projects need (or can support) multiple languages. You can continue to use this theme without ever adding a second language.
 
 If that single language is not English, you can just replace `en` in directory layouts and configurations with the preferred language.
-
-### Search (Powered by Algolia)
-
-[Algolia](https://www.algolia.com/) offers a free service to qualified open source projects called [DocSearch](https://docsearch.algolia.com/). If you are accepted to the DocSearch program, provide your API Key & index name in `src/consts.ts` and a search box will automatically appear in your site header.
-
-Note that Algolia and Astro are not affiliated. We have no say over acceptance to the DocSearch program.
-
-If you'd prefer to remove Algolia's search and replace it with your own, check out the `src/components/Header.astro` component to see where the component is added.
