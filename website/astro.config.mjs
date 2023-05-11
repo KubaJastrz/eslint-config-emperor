@@ -10,13 +10,12 @@ export default defineConfig({
   base: '/eslint-config-emperor',
   vite: {
     optimizeDeps: {
-      exclude: [
-        'eslint-plugin-import',
-        // 'eslint-plugin-jsx-a11y',
-        // 'eslint-plugin-prettier',
-        // 'eslint-plugin-react',
-        // 'eslint-plugin-react-hooks',
-        // 'eslint-plugin-unicorn',
+      exclude: ['eslint-plugin-import'],
+      include: [
+        'eslint-plugin-jsx-a11y',
+        'eslint-plugin-prettier',
+        'eslint-plugin-react',
+        'eslint-plugin-unicorn',
       ],
     },
   },

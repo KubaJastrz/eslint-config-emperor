@@ -28,19 +28,19 @@ const plugins: Plugin[] = [
   {
     name: 'jsx-a11y',
     // @ts-ignore
-    rules: (await import('eslint-plugin-jsx-a11y')).rules,
+    rules: (await import('eslint-plugin-jsx-a11y')).default.rules,
     url: 'https://github.com/jsx-eslint/eslint-plugin-jsx-a11y',
   },
   {
     name: 'prettier',
     // @ts-ignore
-    rules: (await import('eslint-plugin-prettier')).rules,
+    rules: (await import('eslint-plugin-prettier')).default.rules,
     url: 'https://github.com/prettier/eslint-plugin-prettier',
   },
   {
     name: 'react',
     // @ts-ignore
-    rules: (await import('eslint-plugin-react')).rules,
+    rules: (await import('eslint-plugin-react')).default.rules,
     url: 'https://github.com/jsx-eslint/eslint-plugin-react',
   },
   {
@@ -52,7 +52,7 @@ const plugins: Plugin[] = [
   {
     name: 'unicorn',
     // @ts-ignore
-    rules: (await import('eslint-plugin-unicorn')).rules,
+    rules: (await import('eslint-plugin-unicorn')).default.rules,
     url: 'https://github.com/sindresorhus/eslint-plugin-unicorn',
   },
 ];
