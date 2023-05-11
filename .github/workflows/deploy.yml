@@ -14,10 +14,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install, build, and upload your site
-        uses: withastro/action@v0
+      - uses: actions/setup-node@v3
         with:
-          path: website
+          node-version: 'lts/*'
+      - uses: pnpm/action-setup@v2
+        with:
+          run_install: true
+      - run: |
+          cd website
+          pnpm build
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: website/dist
 
   deploy:
     needs: build
