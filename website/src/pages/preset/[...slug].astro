@@ -1,0 +1,21 @@
+---
+import { Preset, getPresets } from '../../content/_presets';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const presets = getPresets();
+  return presets.map((preset) => ({
+    params: {
+      slug: preset.slug,
+    },
+    props: preset,
+  }));
+}
+type Props = Preset & { name: string };
+
+const preset = Astro.props;
+---
+
+<MainLayout headings={[]} title={preset.name} description={preset.description}>
+  <pre>{JSON.stringify(preset, null, 2)}</pre>
+</MainLayout>

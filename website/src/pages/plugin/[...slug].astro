@@ -1,0 +1,21 @@
+---
+import { Plugin, getPlugins } from '../../content/_plugins';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const plugins = getPlugins();
+  return plugins.map((plugin) => ({
+    params: {
+      slug: plugin.name,
+    },
+    props: plugin,
+  }));
+}
+type Props = Plugin & { name: string };
+
+const plugin = Astro.props;
+---
+
+<MainLayout headings={[]} title={plugin.name} description={plugin.description}>
+  <pre>{JSON.stringify(plugin, null, 2)}</pre>
+</MainLayout>
