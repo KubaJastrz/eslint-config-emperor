@@ -1,17 +1,19 @@
 import type { MarkdownHeading } from 'astro';
-import type { FunctionalComponent } from 'preact';
 import { unescape } from 'html-escaper';
-import { useState, useEffect, useRef } from 'preact/hooks';
+import { useState, useEffect, useRef } from 'react';
+import type { MouseEvent } from 'react';
 
 type ItemOffsets = {
   id: string;
   topOffset: number;
 };
 
-const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
-  headings = [],
-}) => {
-  const toc = useRef<HTMLUListElement>();
+type Props = {
+  headings: MarkdownHeading[];
+};
+
+const TableOfContents = ({ headings = [] }: Props) => {
+  const toc = useRef<HTMLUListElement>(null);
   const onThisPageID = 'on-this-page-heading';
   const itemOffsets = useRef<ItemOffsets[]>([]);
   const [currentID, setCurrentID] = useState('overview');
@@ -62,13 +64,13 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
     return () => headingsObserver.disconnect();
   }, [toc.current]);
 
-  const onLinkClick = (e) => {
-    setCurrentID(e.target.getAttribute('href').replace('#', ''));
+  const onLinkClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    setCurrentID(e.currentTarget.getAttribute('href')?.replace('#', '') ?? '');
   };
 
   return (
-    <>
-      <h2 id={onThisPageID} className="heading">
+    <div className="space-y-2">
+      <h2 id={onThisPageID} className="uppercase font-bold">
         On this page
       </h2>
       <ul ref={toc}>
@@ -76,6 +78,7 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
           .filter(({ depth }) => depth > 1 && depth < 4)
           .map((heading) => (
             <li
+              key={heading.slug}
               className={`header-link depth-${heading.depth} ${
                 currentID === heading.slug ? 'current-header-link' : ''
               }`.trim()}
@@ -86,7 +89,7 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
             </li>
           ))}
       </ul>
-    </>
+    </div>
   );
 };
 

@@ -1,12 +1,23 @@
 import { defineConfig } from 'astro/config';
-import preact from '@astrojs/preact';
+import react from '@astrojs/react';
+
+import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    // Enable Preact to support Preact JSX components.
-    preact(),
-  ],
+  integrations: [react(), tailwind()],
   site: `https://kubajastrz.github.io`,
   base: '/eslint-config-emperor',
+  vite: {
+    optimizeDeps: {
+      exclude: [
+        'eslint-plugin-import',
+        'eslint-plugin-jsx-a11y',
+        'eslint-plugin-prettier',
+        'eslint-plugin-react',
+        'eslint-plugin-react-hooks',
+        'eslint-plugin-unicorn',
+      ],
+    },
+  },
 });

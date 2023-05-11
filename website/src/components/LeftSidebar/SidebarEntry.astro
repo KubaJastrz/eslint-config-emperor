@@ -8,7 +8,7 @@ type Props = {
 };
 
 const { currentPageMatch, entry, level = 0 } = Astro.props;
-const url = Astro.site?.pathname + entry.link;
+const url = entry.link;
 ---
 
 <li class="nav-link">

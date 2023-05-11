@@ -51,3 +51,7 @@ const presets: Preset[] = [
 export function getPresets() {
   return presets;
 }
+
+export function lookupPresetsForRule(ruleId: string) {
+  return presets.filter((preset) => preset.configs.some(({ config }) => config.rules[ruleId]));
+}

@@ -16,4 +16,4 @@ export const OPEN_GRAPH = {
 
 export type Sidebar = Record<string, { text: string; link: string }[]>;
 
-export const BASE_URL = import.meta.env.BASE_URL.slice(1, -1);
+export const BASE_URL = import.meta.env.BASE_URL.slice(0, -1);

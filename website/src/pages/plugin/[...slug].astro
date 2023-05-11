@@ -1,6 +1,9 @@
 ---
+import { BASE_URL } from '../../consts';
 import { Plugin, getPlugins } from '../../content/_plugins';
+import { lookupPresetsForRule } from '../../content/_presets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import type { MarkdownHeading } from 'astro';
 
 export async function getStaticPaths() {
   const plugins = getPlugins();
@@ -14,8 +17,90 @@ export async function getStaticPaths() {
 type Props = Plugin & { name: string };
 
 const plugin = Astro.props;
+const rules = Object.entries(plugin.rules).map(([key, value]) => ({
+  name: key,
+  ...value,
+}));
+
+const headings: MarkdownHeading[] = rules.map((rule) => ({
+  depth: 2,
+  text: rule.name,
+  slug: rule.name,
+}));
 ---
 
-<MainLayout headings={[]} title={plugin.name} description={plugin.description}>
-  <pre>{JSON.stringify(plugin, null, 2)}</pre>
+<MainLayout headings={headings} title={plugin.name}>
+  <div class="space-y-7">
+    {
+      rules.map((rule) => {
+        const description = rule.meta?.docs?.description;
+        const url = rule.meta?.docs?.url;
+        const ruleId = plugin.name === 'eslint' ? rule.name : `${plugin.name}/${rule.name}`;
+        const presets = lookupPresetsForRule(ruleId);
+        return (
+          <div>
+            <div class="flex-grow">
+              <h3 id={rule.name} class="text-lg mb-1 font-semibold font-mono flex items-center gap-4">
+                <span>{ruleId}</span>
+                {url ? (
+                  <a href={url} class="text-sm hover:underline text-[#7fc87a]">
+                    docs
+                  </a>
+                ) : null}
+              </h3>
+              <p class="text-[--theme-text-light]">{description ?? <i>no description</i>}</p>
+            </div>
+            <div class="mt-2 text-sm font-semibold flex items-center text-[#d8bfcb]">
+              {presets.length === 0 && (
+                <p class="flex items-center gap-0.5">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-5 h-5"
+                  >
+                    <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                  </svg>
+                  <span>Not configured in any preset</span>
+                </p>
+              )}
+              {presets.length > 0 && (
+                <>
+                  <p class="inline-flex items-center gap-0.5 text-[#c6decb]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      class="w-5 h-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span>Configured in</span>
+                  </p>
+                  <ul class="inline-flex items-center gap-2 ml-1.5">
+                    {presets.map((preset) => {
+                      return (
+                        <li>
+                          <a
+                            href={`${BASE_URL}/preset/${preset.slug}#${ruleId}`}
+                            class="text-sm uppercase font-semibold bg-teal-800 text-teal-50 rounded px-2 py-0.5"
+                          >
+                            {preset.name}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </>
+              )}
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
 </MainLayout>
