@@ -12,11 +12,11 @@ export default defineConfig({
     optimizeDeps: {
       exclude: [
         'eslint-plugin-import',
-        'eslint-plugin-jsx-a11y',
-        'eslint-plugin-prettier',
-        'eslint-plugin-react',
-        'eslint-plugin-react-hooks',
-        'eslint-plugin-unicorn',
+        // 'eslint-plugin-jsx-a11y',
+        // 'eslint-plugin-prettier',
+        // 'eslint-plugin-react',
+        // 'eslint-plugin-react-hooks',
+        // 'eslint-plugin-unicorn',
       ],
     },
   },

@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 type Props = Plugin & { name: string };
 
 const plugin = Astro.props;
-const rules = Object.entries(plugin.rules).map(([key, value]) => ({
+const rules = Object.entries(plugin.rules ?? {}).map(([key, value]) => ({
   name: key,
   ...value,
 }));
