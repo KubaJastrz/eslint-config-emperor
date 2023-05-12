@@ -1,3 +1,4 @@
+import type { Linter } from 'eslint';
 import snapshot from '../../../packages/eslint-config-emperor/.release-snapshot.json' assert { type: 'json' };
 
 function getConfigFromSnapshot(label: string) {
@@ -5,12 +6,12 @@ function getConfigFromSnapshot(label: string) {
   if (!config) {
     throw new Error(`Could not find config ${label}`);
   }
-  return config;
+  return config as unknown as { config: Linter.BaseConfig };
 }
 
 export type Preset = {
   name: string;
-  configs: object[];
+  config: Linter.BaseConfig;
   description: string;
   slug: string;
 };
@@ -18,31 +19,31 @@ export type Preset = {
 const presets: Preset[] = [
   {
     name: 'Base',
-    configs: [getConfigFromSnapshot('base (js)'), getConfigFromSnapshot('base (ts)')],
+    config: getConfigFromSnapshot('base (ts)').config,
     description: 'Base ESLint config for all projects',
     slug: 'base',
   },
   {
     name: 'Base Style',
-    configs: [getConfigFromSnapshot('base/style (js)'), getConfigFromSnapshot('base/style (ts)')],
+    config: getConfigFromSnapshot('base/style (ts)').config,
     description: 'Code style rules for all projects',
     slug: 'base/style',
   },
   {
     name: 'React',
-    configs: [getConfigFromSnapshot('react (js)'), getConfigFromSnapshot('react (ts)')],
+    config: getConfigFromSnapshot('react (ts)').config,
     description: 'ESLint config for React projects',
     slug: 'react',
   },
   {
     name: 'React Style',
-    configs: [getConfigFromSnapshot('react/style (js)'), getConfigFromSnapshot('react/style (ts)')],
+    config: getConfigFromSnapshot('react/style (ts)').config,
     description: 'Code style rules for React projects',
     slug: 'react/style',
   },
   {
     name: 'Prettier',
-    configs: [getConfigFromSnapshot('prettier')],
+    config: getConfigFromSnapshot('prettier').config,
     description: 'Convenience config ESLint for Prettier',
     slug: 'prettier',
   },
@@ -53,5 +54,14 @@ export function getPresets() {
 }
 
 export function lookupPresetsForRule(ruleId: string) {
-  return presets.filter((preset) => preset.configs.some(({ config }) => config.rules[ruleId]));
+  return presets.filter((preset) => preset.config.rules?.[ruleId]);
+}
+
+/**
+ * Prioritize ESLint rules (with no slash) over plugins (with slash)
+ */
+export function compareRuleKeys(a: string, b: string) {
+  if (a.includes('/') && !b.includes('/')) return 1;
+  if (!a.includes('/') && b.includes('/')) return -1;
+  return a.localeCompare(b);
 }

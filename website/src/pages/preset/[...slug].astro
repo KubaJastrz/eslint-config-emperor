@@ -1,6 +1,8 @@
 ---
-import { Preset, getPresets } from '../../content/_presets';
+import { BASE_URL } from '../../consts';
+import { Preset, compareRuleKeys, getPresets } from '../../content/_presets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import type { MarkdownHeading } from 'astro';
 
 export async function getStaticPaths() {
   const presets = getPresets();
@@ -14,8 +16,59 @@ export async function getStaticPaths() {
 type Props = Preset & { name: string };
 
 const preset = Astro.props;
+
+if (!preset.config.rules) {
+  throw new Error(`Preset ${preset.name} has no rules`);
+}
+
+const rules = Object.entries(preset.config.rules)
+  .map(([name, value]) => {
+    if (!value) {
+      throw new Error(`Preset ${preset.name} has a malformed rule ${name} with value ${value}`);
+    }
+    return { name, value: Array.isArray(value) ? value : [value] };
+  })
+  .sort((a, b) => compareRuleKeys(a.name, b.name));
+
+const headings: MarkdownHeading[] = [
+  {
+    depth: 2,
+    text: 'Config',
+    slug: 'config',
+  },
+  {
+    depth: 2,
+    text: 'Rules',
+    slug: 'rules',
+  },
+  ...rules.map((rule) => ({
+    depth: 3,
+    text: rule.name,
+    slug: rule.name,
+  })),
+];
 ---
 
-<MainLayout headings={[]} title={preset.name} description={preset.description}>
-  <pre>{JSON.stringify(preset, null, 2)}</pre>
+<MainLayout headings={headings} title={preset.name} description={preset.description}>
+  <div class="space-y-7">
+    {
+      rules.map((rule) => {
+        const ruleId = rule.name;
+        const pluginId = ruleId.includes('/') ? ruleId.split('/')[0] : 'eslint';
+        const ruleName = ruleId.includes('/') ? ruleId.split('/')[1] : ruleId;
+        const url = `${BASE_URL}/plugin/${pluginId}#${ruleName}`;
+        return (
+          <div class="flex-grow">
+            <h3 id={rule.name} class="text-lg mb-1 font-semibold font-mono flex items-center gap-4">
+              <span>{rule.name}</span>
+              <a href={url} class="text-sm hover:underline text-[#7fc87a]">
+                ref
+              </a>
+            </h3>
+            <p class="text-[--theme-text-light]">{JSON.stringify(rule.value)}</p>
+          </div>
+        );
+      })
+    }
+  </div>
 </MainLayout>
