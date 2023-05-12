@@ -2,7 +2,6 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    include: ['packages/**/__tests__/**/*.test.[jt]s?(x)'],
-    setupFiles: ['./config/snapshot-rules.ts'],
+    include: ['{packages,website}/**\/*.test.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
   },
 });

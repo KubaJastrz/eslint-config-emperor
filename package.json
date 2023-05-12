@@ -4,7 +4,6 @@
   "scripts": {
     "website": "cd website && pnpm dev",
     "format": "prettier --write .",
-    "generate-docs": "node scripts/generate-docs.js",
     "test": "vitest"
   },
   "prettier": {
@@ -19,7 +18,6 @@
     "husky": "^8.0.3",
     "prettier": "2.8.8",
     "semantic-release": "^21.0.2",
-    "table": "^6.8.1",
     "typescript": "5.0.4",
     "vite": "^4.3.5",
     "vitest": "0.31.0"
