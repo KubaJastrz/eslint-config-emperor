@@ -1,7 +1,7 @@
 import type { MarkdownHeading } from 'astro';
 import { unescape } from 'html-escaper';
-import { useState, useEffect, useRef } from 'react';
-import type { MouseEvent } from 'react';
+import { useState, useEffect, useRef } from 'preact/hooks';
+import type { JSX } from 'preact/jsx-runtime';
 
 type ItemOffsets = {
   id: string;
@@ -64,7 +64,7 @@ const TableOfContents = ({ headings = [] }: Props) => {
     return () => headingsObserver.disconnect();
   }, [toc.current]);
 
-  const onLinkClick = (e: MouseEvent<HTMLAnchorElement>) => {
+  const onLinkClick = (e: JSX.TargetedMouseEvent<HTMLAnchorElement>) => {
     setCurrentID(e.currentTarget.getAttribute('href')?.replace('#', '') ?? '');
   };
 

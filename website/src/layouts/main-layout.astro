@@ -1,13 +1,13 @@
 ---
 import type { MarkdownHeading } from 'astro';
 import type { CollectionEntry } from 'astro:content';
-import HeadCommon from '../components/HeadCommon.astro';
-import HeadSEO from '../components/HeadSEO.astro';
-import Header from '../components/Header/Header.astro';
-import PageContent from '../components/PageContent/PageContent.astro';
-import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
-import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
-import { SITE } from '../consts';
+import HeadCommon from '~/components/head-common.astro';
+import HeadSEO from '~/components/head-seo.astro';
+import Header from '~/components/header/header.astro';
+import PageContent from '~/components/page-content/page-content.astro';
+import LeftSidebar from '~/components/left-sidebar/left-sidebar.astro';
+import RightSidebar from '~/components/right-sidebar/right-sidebar.astro';
+import { SITE } from '~/consts';
 
 type Props = CollectionEntry<'docs'>['data'] & {
 	headings: MarkdownHeading[];

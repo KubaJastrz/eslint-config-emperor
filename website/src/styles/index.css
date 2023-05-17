@@ -48,7 +48,7 @@ pre > code {
 }
 
 :target {
-  scroll-margin: calc(var(--theme-sidebar-offset, 5rem) + 2rem) 0 2rem;
+  scroll-margin: calc(var(--theme-sidebar-offset, 0rem) + 2rem) 0 2rem;
 }
 
 /* Highlight TOC header link matching the current scroll position */

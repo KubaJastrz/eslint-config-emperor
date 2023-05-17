@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import './ThemeToggleButton.css';
+import { useState, useEffect } from 'preact/hooks';
+import './theme-toggle-button.css';
 
 const themes = ['light', 'dark'];
 

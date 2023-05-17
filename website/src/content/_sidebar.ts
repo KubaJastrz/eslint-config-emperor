@@ -1,4 +1,4 @@
-import { BASE_URL } from '../consts';
+import { BASE_URL } from '~/consts';
 import { getPlugins } from './_plugins';
 import { Preset, getPresets } from './_presets';
 

@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'preact/hooks';
 
-const MenuToggle = () => {
+export default function SidebarToggle() {
   const [sidebarShown, setSidebarShown] = useState(false);
 
   useEffect(() => {
@@ -37,6 +37,4 @@ const MenuToggle = () => {
       <span className="sr-only">Toggle sidebar</span>
     </button>
   );
-};
-
-export default MenuToggle;
+}
