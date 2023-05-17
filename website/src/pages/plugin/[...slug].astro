@@ -31,13 +31,18 @@ const headings: MarkdownHeading[] = rules.map((rule) => ({
   text: rule.name,
   slug: rule.name,
 }));
+
+function parseDescription(description: string | undefined) {
+  if (!description) return `<i>no description</i>`;
+  return description.replace(/`([^`]+)`/g, '<code>$1</code>');
+}
 ---
 
 <MainLayout headings={headings} title={plugin.name}>
   <div class="space-y-7">
     {
       rules.map((rule) => {
-        const description = rule.meta?.docs?.description;
+        const description = parseDescription(rule.meta?.docs?.description);
         const url = rule.meta?.docs?.url;
         const ruleId = plugin.name === 'eslint' ? rule.name : `${plugin.name}/${rule.name}`;
         const presets = lookupPresetsForRule(ruleId);
@@ -74,7 +79,7 @@ const headings: MarkdownHeading[] = rules.map((rule) => ({
                   </a>
                 ) : null}
               </h3>
-              <p class="text-[--theme-text-light]">{description ?? <i>no description</i>}</p>
+              <p class="text-[--theme-text-light]" set:html={description} />
             </div>
             <div class="mt-2 text-sm font-semibold flex items-center text-[#d8bfcb]">
               {presets.length === 0 && (
