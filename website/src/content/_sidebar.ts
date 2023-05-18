@@ -36,7 +36,7 @@ export function getSidebar(): Sidebar {
     'eslint-config-emperor': [
       {
         text: `Introduction`,
-        link: `${BASE_URL}/introduction`,
+        link: `${BASE_URL}/`,
       },
       {
         text: `GitHub`,
