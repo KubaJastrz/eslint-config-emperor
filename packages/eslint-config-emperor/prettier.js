@@ -2,9 +2,9 @@
 if (!process.env.NODE_ENV === 'test') require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
-  extends: ['prettier'],
-  plugins: ['prettier'],
-  rules: {
-    'prettier/prettier': 'warn',
-  },
+	extends: ['prettier'],
+	plugins: ['prettier'],
+	rules: {
+		'prettier/prettier': 'warn',
+	},
 };

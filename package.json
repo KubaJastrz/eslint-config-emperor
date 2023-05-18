@@ -1,26 +1,27 @@
 {
-  "name": "eslint-config-emperor",
-  "private": true,
-  "scripts": {
-    "website": "cd website && pnpm dev",
-    "format": "prettier --write .",
-    "test": "vitest"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
-  "devDependencies": {
-    "@semantic-release/exec": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "@types/eslint": "^8.37.0",
-    "husky": "^8.0.3",
-    "prettier": "2.8.8",
-    "semantic-release": "^21.0.2",
-    "typescript": "5.0.4",
-    "vite": "^4.3.7",
-    "vitest": "0.31.0"
-  },
-  "packageManager": "pnpm@8.3.1"
+	"name": "eslint-config-emperor",
+	"private": true,
+	"scripts": {
+		"format": "prettier --write .",
+		"test": "vitest",
+		"website": "cd website && pnpm dev"
+	},
+	"prettier": {
+		"printWidth": 100,
+		"singleQuote": true,
+		"trailingComma": "all",
+		"useTabs": true
+	},
+	"devDependencies": {
+		"@semantic-release/exec": "^6.0.3",
+		"@semantic-release/git": "^10.0.1",
+		"@types/eslint": "^8.37.0",
+		"husky": "^8.0.3",
+		"prettier": "2.8.8",
+		"semantic-release": "^21.0.2",
+		"typescript": "5.0.4",
+		"vite": "^4.3.7",
+		"vitest": "0.31.0"
+	},
+	"packageManager": "pnpm@8.3.1"
 }

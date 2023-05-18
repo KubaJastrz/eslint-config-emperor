@@ -50,16 +50,16 @@ Rules reference:
 
 ```js
 module.exports = {
-  // General error-catching rules. Lightweight code style rules are included as optional.
-  extends: ['emperor', 'emperor/style'],
-  // Add, if you are using TypeScript:
-  parserOptions: {
-    project: './tsconfig.json',
-  },
-  // Add, if you are using Node.js:
-  env: {
-    node: true,
-  },
+	// General error-catching rules. Lightweight code style rules are included as optional.
+	extends: ['emperor', 'emperor/style'],
+	// Add, if you are using TypeScript:
+	parserOptions: {
+		project: './tsconfig.json',
+	},
+	// Add, if you are using Node.js:
+	env: {
+		node: true,
+	},
 };
 ```
 
@@ -72,17 +72,17 @@ Rules reference:
 
 ```js
 module.exports = {
-  // General error-catching rules. Already includes regular JS/TS rules.
-  // Lightweight code style rules are included as optional.
-  extends: ['emperor/react', 'emperor/react/style'],
-  // Add, if you are using TypeScript:
-  parserOptions: {
-    project: './tsconfig.json',
-  },
-  // Add, if you are using Node.js:
-  env: {
-    node: true,
-  },
+	// General error-catching rules. Already includes regular JS/TS rules.
+	// Lightweight code style rules are included as optional.
+	extends: ['emperor/react', 'emperor/react/style'],
+	// Add, if you are using TypeScript:
+	parserOptions: {
+		project: './tsconfig.json',
+	},
+	// Add, if you are using Node.js:
+	env: {
+		node: true,
+	},
 };
 ```
 
@@ -102,6 +102,6 @@ Rules reference:
 
 ```js
 module.exports = {
-  extends: ['emperor/prettier'],
+	extends: ['emperor/prettier'],
 };
 ```
