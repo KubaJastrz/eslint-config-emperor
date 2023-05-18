@@ -14,11 +14,11 @@
     "@astrojs/tailwind": "^3.1.2",
     "astro": "^2.4.5",
     "preact": "^10.14.1",
-    "tailwindcss": "^3.0.24"
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
     "@types/html-escaper": "^3.0.0",
-    "@types/node": "^20.1.7",
+    "@types/node": "^20.2.0",
     "html-escaper": "^3.0.3"
   }
 }

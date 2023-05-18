@@ -20,6 +20,7 @@ function getPresetSidebar() {
   }
   return presets.filter((preset) => !preset.slug.includes('/')).map(mapEntry);
 }
+
 function getPluginSidebar() {
   const plugins = getPlugins();
   return plugins.map((plugin) => {
@@ -36,6 +37,10 @@ export function getSidebar(): Sidebar {
       {
         text: `Introduction`,
         link: `${BASE_URL}/introduction`,
+      },
+      {
+        text: `GitHub`,
+        link: `https://github.com/KubaJastrz/eslint-config-emperor`,
       },
     ],
     Presets: getPresetSidebar(),

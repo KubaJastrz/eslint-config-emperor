@@ -230,8 +230,7 @@
         },
         "settings": {},
         "ignorePatterns": []
-      },
-      "outFile": "base_js.md"
+      }
     },
     {
       "label": "base (ts)",
@@ -508,8 +507,7 @@
         },
         "settings": {},
         "ignorePatterns": []
-      },
-      "outFile": "base_ts.md"
+      }
     },
     {
       "label": "base/style (js)",
@@ -661,8 +659,7 @@
         },
         "settings": {},
         "ignorePatterns": []
-      },
-      "outFile": "base-style_js.md"
+      }
     },
     {
       "label": "base/style (ts)",
@@ -871,8 +868,7 @@
         },
         "settings": {},
         "ignorePatterns": []
-      },
-      "outFile": "base-style_ts.md"
+      }
     },
     {
       "label": "react (js)",
@@ -1433,8 +1429,7 @@
           }
         },
         "ignorePatterns": []
-      },
-      "outFile": "react_js.md"
+      }
     },
     {
       "label": "react (ts)",
@@ -2041,8 +2036,7 @@
           }
         },
         "ignorePatterns": []
-      },
-      "outFile": "react_ts.md"
+      }
     },
     {
       "label": "react/style (js)",
@@ -2206,8 +2200,7 @@
         },
         "settings": {},
         "ignorePatterns": []
-      },
-      "outFile": "react-style_js.md"
+      }
     },
     {
       "label": "react/style (ts)",
@@ -2428,8 +2421,7 @@
         },
         "settings": {},
         "ignorePatterns": []
-      },
-      "outFile": "react-style_ts.md"
+      }
     },
     {
       "label": "prettier",
@@ -2976,8 +2968,7 @@
         },
         "settings": {},
         "ignorePatterns": []
-      },
-      "outFile": "prettier.md"
+      }
     }
   ]
 }
