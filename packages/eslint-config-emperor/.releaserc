@@ -19,7 +19,7 @@
     [
       "@semantic-release/exec",
       {
-        "generateNotesCmd": "node ../../scripts/generate-changelog.js ${nextRelease.version}"
+        "generateNotesCmd": "node ../../scripts/generate-changelog.cjs ${nextRelease.version}"
       }
     ],
     [

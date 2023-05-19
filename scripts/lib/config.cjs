@@ -3,7 +3,7 @@
 const { ESLint } = require('eslint');
 const path = require('node:path');
 
-const repoDir = path.join(__dirname, '..');
+const repoDir = path.join(__dirname, '../..');
 const emperorDir = path.join(repoDir, 'packages/eslint-config-emperor');
 
 const paths = {
