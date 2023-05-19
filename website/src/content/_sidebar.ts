@@ -39,6 +39,10 @@ export function getSidebar(): Sidebar {
 				link: `${BASE_URL}/`,
 			},
 			{
+				text: `Release Notes`,
+				link: `https://github.com/KubaJastrz/eslint-config-emperor/releases`,
+			},
+			{
 				text: `GitHub`,
 				link: `https://github.com/KubaJastrz/eslint-config-emperor`,
 			},
