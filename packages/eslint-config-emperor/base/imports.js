@@ -1,17 +1,11 @@
-/**
- * Native ESLint rules
- * @see https://eslint.org/docs/rules/
- */
-const eslint = {};
-
 module.exports = {
 	extends: [],
-	plugins: ['import', 'unicorn', '@typescript-eslint'],
+	plugins: ['import'],
 	rules: {
-		...eslint,
-
-		// Import
+		'import/default': 'error',
 		'import/export': 'error',
+		'import/named': 'error',
+		'import/namespace': 'error',
 		'import/newline-after-import': 'error',
 		'import/no-absolute-path': 'error',
 		'import/no-anonymous-default-export': 'error',
@@ -33,30 +27,15 @@ module.exports = {
 				noUselessIndex: true,
 			},
 		],
-
-		// Unicorn
-		'unicorn/prefer-export-from': 'error',
 	},
 	overrides: [
 		{
-			files: ['*.js', '*.jsx'],
-			rules: {
-				// These rules are redundant in TypeScript
-				'import/default': 'error',
-				'import/named': 'error',
-				'import/namespace': 'error',
-			},
-		},
-		{
 			files: ['*.ts', '*.tsx'],
 			rules: {
-				'@typescript-eslint/consistent-type-imports': [
-					'error',
-					{
-						prefer: 'type-imports',
-						fixStyle: 'inline-type-imports',
-					},
-				],
+				// These rules are redundant in TypeScript
+				'import/default': 'off',
+				'import/named': 'off',
+				'import/namespace': 'off',
 			},
 		},
 	],

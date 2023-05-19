@@ -76,6 +76,7 @@ const typescriptEslint = {
 	'@typescript-eslint/no-for-in-array': 'error',
 	'@typescript-eslint/no-misused-promises': 'error',
 	'@typescript-eslint/no-namespace': 'error',
+	'@typescript-eslint/no-unnecessary-condition': 'error',
 	'@typescript-eslint/no-unnecessary-type-constraint': 'error',
 	'@typescript-eslint/no-unsafe-argument': 'error',
 	'@typescript-eslint/no-unsafe-assignment': 'error',
@@ -85,11 +86,11 @@ const typescriptEslint = {
 	'@typescript-eslint/no-unsafe-return': 'error',
 
 	'no-dupe-class-members': 'off',
-	'@typescript-eslint/no-dupe-class-members': 'error',
+	'@typescript-eslint/no-dupe-class-members': eslint['no-dupe-class-members'],
 	'no-loss-of-precision': 'off',
-	'@typescript-eslint/no-loss-of-precision': 'error',
+	'@typescript-eslint/no-loss-of-precision': eslint['no-loss-of-precision'],
 	'no-invalid-this': 'off',
-	'@typescript-eslint/no-invalid-this': 'error',
+	'@typescript-eslint/no-invalid-this': eslint['no-invalid-this'],
 };
 
 module.exports = {
