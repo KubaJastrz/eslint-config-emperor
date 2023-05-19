@@ -2,6 +2,7 @@
 	"name": "eslint-config-emperor",
 	"version": "0.0.0-development",
 	"description": "Curated ESLint config for React and TypeScript",
+	"homepage": "https://kubajastrz.github.io/eslint-config-emperor/",
 	"bugs": {
 		"url": "https://github.com/kubajastrz/eslint-config-emperor/issues"
 	},
@@ -50,11 +51,10 @@
 			"optional": true
 		}
 	},
-	"publishConfig": {
-		"access": "public",
-		"provenance": true
-	},
 	"engines": {
 		"node": ">=16.13.0"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
