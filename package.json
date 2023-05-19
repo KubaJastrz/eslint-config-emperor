@@ -2,7 +2,7 @@
 	"name": "eslint-config-emperor",
 	"private": true,
 	"scripts": {
-		"format": "prettier --write .",
+		"format": "prettier --write --plugin-search-dir=. .",
 		"test": "vitest",
 		"website": "cd website && pnpm dev"
 	},
@@ -10,7 +10,19 @@
 		"printWidth": 100,
 		"singleQuote": true,
 		"trailingComma": "all",
-		"useTabs": true
+		"useTabs": true,
+		"plugins": [
+			"prettier-plugin-astro",
+			"prettier-plugin-tailwindcss"
+		],
+		"overrides": [
+			{
+				"files": "*.astro",
+				"options": {
+					"parser": "astro"
+				}
+			}
+		]
 	},
 	"devDependencies": {
 		"@semantic-release/exec": "^6.0.3",
@@ -18,6 +30,8 @@
 		"@types/eslint": "^8.37.0",
 		"husky": "^8.0.3",
 		"prettier": "2.8.8",
+		"prettier-plugin-astro": "^0.8.1",
+		"prettier-plugin-tailwindcss": "^0.3.0",
 		"semantic-release": "^21.0.2",
 		"typescript": "5.0.4",
 		"vite": "^4.3.7",

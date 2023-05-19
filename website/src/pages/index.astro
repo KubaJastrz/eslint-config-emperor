@@ -7,12 +7,12 @@ const post = docs.find((entry) => entry.id === 'introduction.md');
 type Props = CollectionEntry<'docs'>;
 
 if (!post) {
-  throw new Error('introduction.md not found!');
+	throw new Error('introduction.md not found!');
 }
 
 const { Content, headings } = await post.render();
 ---
 
 <MainLayout headings={headings} {...post.data}>
-  <Content />
+	<Content />
 </MainLayout>

@@ -4,134 +4,135 @@ import { Plugin, getPlugins } from '~/content/_plugins';
 import { lookupPresetsForRule } from '~/content/_presets';
 import MainLayout from '~/layouts/main-layout.astro';
 import type { MarkdownHeading } from 'astro';
+import { escape } from 'html-escaper';
 
 export async function getStaticPaths() {
-  const plugins = getPlugins();
-  return plugins.map((plugin) => ({
-    params: {
-      slug: plugin.name,
-    },
-    props: plugin,
-  }));
+	const plugins = getPlugins();
+	return plugins.map((plugin) => ({
+		params: {
+			slug: plugin.name,
+		},
+		props: plugin,
+	}));
 }
 type Props = Plugin & { name: string };
 
 const plugin = Astro.props;
 const rules = Object.entries(plugin.rules ?? {}).map(([key, value]) => ({
-  name: key,
-  ...value,
+	name: key,
+	...value,
 }));
 
 if (!plugin.rules) {
-  console.warn(`No rules found for plugin ${plugin.name}`);
+	console.warn(`No rules found for plugin ${plugin.name}`);
 }
 
 const headings: MarkdownHeading[] = rules.map((rule) => ({
-  depth: 2,
-  text: rule.name,
-  slug: rule.name,
+	depth: 2,
+	text: rule.name,
+	slug: rule.name,
 }));
 
 function parseDescription(description: string | undefined) {
-  if (!description) return `<i>no description</i>`;
-  return description.replace(/`([^`]+)`/g, '<code>$1</code>');
+	if (!description) return `<i>no description</i>`;
+	return escape(description).replace(/`([^`]+)`/g, '<code>$1</code>');
 }
 ---
 
 <MainLayout headings={headings} title={plugin.name}>
-  <div class="space-y-7">
-    {
-      rules.map((rule) => {
-        const description = parseDescription(rule.meta?.docs?.description);
-        const url = rule.meta?.docs?.url;
-        const ruleId = plugin.name === 'eslint' ? rule.name : `${plugin.name}/${rule.name}`;
-        const presets = lookupPresetsForRule(ruleId);
-        return (
-          <div>
-            <div class="flex-grow">
-              <h3
-                id={rule.name}
-                class="text-lg mb-1 font-semibold font-mono flex items-center gap-4"
-              >
-                <span>{ruleId}</span>
-                {url ? (
-                  <a
-                    href={url}
-                    class="flex items-center gap-1 text-sm hover:underline text-[#7fc87a]"
-                  >
-                    <span>docs</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      class="w-5 h-5 fill-[#70ae6c]"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
-                        clip-rule="evenodd"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </a>
-                ) : null}
-              </h3>
-              <p class="text-[--theme-text-light]" set:html={description} />
-            </div>
-            <div class="mt-2 text-sm font-semibold flex items-center text-[#d8bfcb]">
-              {presets.length === 0 && (
-                <p class="flex items-center gap-0.5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    class="w-5 h-5"
-                  >
-                    <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-                  </svg>
-                  <span>Not configured in any preset</span>
-                </p>
-              )}
-              {presets.length > 0 && (
-                <>
-                  <p class="inline-flex items-center gap-0.5 text-[#c6decb]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      class="w-5 h-5"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <span>Configured in</span>
-                  </p>
-                  <ul class="inline-flex items-center gap-2 ml-1.5">
-                    {presets.map((preset) => {
-                      return (
-                        <li>
-                          <a
-                            href={`${BASE_URL}/preset/${preset.slug}#${ruleId}`}
-                            class="text-sm uppercase font-semibold bg-teal-800 text-teal-50 rounded px-2 py-0.5"
-                          >
-                            {preset.name}
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </>
-              )}
-            </div>
-          </div>
-        );
-      })
-    }
-  </div>
+	<div class="space-y-7">
+		{
+			rules.map((rule) => {
+				const description = parseDescription(rule.meta?.docs?.description);
+				const url = rule.meta?.docs?.url;
+				const ruleId = plugin.name === 'eslint' ? rule.name : `${plugin.name}/${rule.name}`;
+				const presets = lookupPresetsForRule(ruleId);
+				return (
+					<div>
+						<div class="flex-grow">
+							<h3
+								id={rule.name}
+								class="mb-1 flex items-center gap-4 font-mono text-lg font-semibold"
+							>
+								<span>{ruleId}</span>
+								{url ? (
+									<a
+										href={url}
+										class="flex items-center gap-1 text-sm text-[#7fc87a] hover:underline"
+									>
+										<span>docs</span>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 20 20"
+											class="h-5 w-5 fill-[#70ae6c]"
+										>
+											<path
+												fill-rule="evenodd"
+												d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
+												clip-rule="evenodd"
+											/>
+											<path
+												fill-rule="evenodd"
+												d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z"
+												clip-rule="evenodd"
+											/>
+										</svg>
+									</a>
+								) : null}
+							</h3>
+							<p class="text-[--theme-text-light]" set:html={description} />
+						</div>
+						<div class="mt-2 flex items-center text-sm font-semibold text-[#d8bfcb]">
+							{presets.length === 0 && (
+								<p class="flex items-center gap-0.5">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										viewBox="0 0 20 20"
+										fill="currentColor"
+										class="h-5 w-5"
+									>
+										<path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+									</svg>
+									<span>Not configured in any preset</span>
+								</p>
+							)}
+							{presets.length > 0 && (
+								<>
+									<p class="inline-flex items-center gap-0.5 text-[#c6decb]">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 20 20"
+											fill="currentColor"
+											class="h-5 w-5"
+										>
+											<path
+												fill-rule="evenodd"
+												d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+												clip-rule="evenodd"
+											/>
+										</svg>
+										<span>Configured in</span>
+									</p>
+									<ul class="ml-1.5 inline-flex items-center gap-2">
+										{presets.map((preset) => {
+											return (
+												<li>
+													<a
+														href={`${BASE_URL}/preset/${preset.slug}#${ruleId}`}
+														class="rounded bg-teal-800 px-2 py-0.5 text-sm font-semibold uppercase text-teal-50"
+													>
+														{preset.name}
+													</a>
+												</li>
+											);
+										})}
+									</ul>
+								</>
+							)}
+						</div>
+					</div>
+				);
+			})
+		}
+	</div>
 </MainLayout>

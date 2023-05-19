@@ -70,7 +70,7 @@ const TableOfContents = ({ headings = [] }: Props) => {
 
 	return (
 		<div className="space-y-2">
-			<h2 id={onThisPageID} className="uppercase font-bold">
+			<h2 id={onThisPageID} className="font-bold uppercase">
 				On this page
 			</h2>
 			<ul ref={toc}>

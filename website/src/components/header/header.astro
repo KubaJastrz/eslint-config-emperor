@@ -4,41 +4,41 @@ import SidebarToggle from './sidebar-toggle';
 ---
 
 <header>
-  <SkipToContent />
-  <nav class="nav-wrapper" title="Top Navigation">
-    <div class="menu-toggle">
-      <SidebarToggle client:idle />
-    </div>
-  </nav>
+	<SkipToContent />
+	<nav class="nav-wrapper" title="Top Navigation">
+		<div class="menu-toggle">
+			<SidebarToggle client:idle />
+		</div>
+	</nav>
 </header>
 
 <style>
-  header {
-    z-index: 11;
-    height: var(--theme-navbar-height);
-    width: 100%;
-    background-color: var(--theme-navbar-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: sticky;
-    top: 0;
-  }
+	header {
+		z-index: 11;
+		height: var(--theme-navbar-height);
+		width: 100%;
+		background-color: var(--theme-navbar-bg);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		position: sticky;
+		top: 0;
+	}
 
-  .nav-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 1em;
-    width: 100%;
-    max-width: 82em;
-    padding: 0 1rem;
-  }
+	.nav-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 1em;
+		width: 100%;
+		max-width: 82em;
+		padding: 0 1rem;
+	}
 
-  @media (min-width: 50em) {
-    .menu-toggle {
-      display: none;
-    }
-  }
+	@media (min-width: 50em) {
+		.menu-toggle {
+			display: none;
+		}
+	}
 </style>
